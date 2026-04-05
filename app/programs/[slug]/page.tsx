@@ -127,7 +127,7 @@ const ProgramDetailPage: FC<PageProps> = async ({ params }) => {
             {/* Right Column - Sidebar */}
             <div className="lg:col-span-1">
               {/* Program Info Card */}
-              <div className="sticky top-24 bg-green-50 border-2 border-green-200 rounded-2xl p-6 mb-6">
+              <div className="top-24 bg-green-50 border-2 border-green-200 rounded-2xl p-6 mb-6">
                 <h3 className="text-lg font-bold text-green-900 mb-6">Program Info</h3>
 
                 <div className="space-y-4 mb-8">
@@ -149,18 +149,13 @@ const ProgramDetailPage: FC<PageProps> = async ({ params }) => {
                   </div>
                 </div>
 
-                {/* Apply Button */}
-                <Link
-                  href="/contact"
-                  className="block w-full text-center px-6 py-3 bg-green-700 hover:bg-green-800 text-white font-bold rounded-lg transition duration-300"
-                >
-                  Apply Now
-                </Link>
+                
+                
               </div>
 
               {/* Other Programs */}
-              <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 mb-6">
-                <h3 className="text-lg font-bold text-green-900 mb-4">Other Programs</h3>
+              <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 ">
+                <h3 className="text-lg font-bold text-green-900 mb-3">Other Programs</h3>
                 <div className="space-y-3">
                   {otherPrograms.map((prog) => (
                     <Link
@@ -176,24 +171,7 @@ const ProgramDetailPage: FC<PageProps> = async ({ params }) => {
                 </div>
               </div>
 
-              {/* Quick Info Card */}
-              <div className="bg-white border border-gray-200 rounded-2xl p-6">
-                <h3 className="text-lg font-bold text-green-900 mb-4">Quick Info</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="flex gap-3">
-                    <span className="text-xl">📍</span>
-                    <span className="text-gray-700">Tilottama-15, Kotihawa, Rupandehi, Nepal</span>
-                  </div>
-                  <div className="flex gap-3">
-                    <span className="text-xl">📞</span>
-                    <span className="text-gray-700">071-514220</span>
-                  </div>
-                  <div className="flex gap-3">
-                    <span className="text-xl">📧</span>
-                    <span className="text-gray-700">nobelacademy68@gmail.com</span>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
