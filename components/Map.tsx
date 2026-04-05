@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 
 // Fix for default marker icon in leaflet
 const icon = L.icon({
-  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
   iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
   iconSize: [25, 41],
@@ -32,7 +32,9 @@ const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={position} icon={icon}>
+        <Marker 
+        position={position} 
+        icon={icon}>
           <Popup>
             Nobel Environment Academy <br /> Tilottama-15, Kotihawa.
           </Popup>

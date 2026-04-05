@@ -87,12 +87,12 @@ const ProgramsSection: FC = () => {
                 backgroundPosition: 'center'
               }}
             >
-              <div className="p-6 h-full flex flex-col justify-between relative ">
+              <div className="p-6 h-full flex flex-col justify-between relative  ">
                   {/* Hidden content */}
 
-                <div className='opacity-0 hover:opacity-100 transition duration-300'>
+                <div className='opacity-0 hover:opacity-100 transition duration-300 '>
                 {/* Emoji */}
-                <div className="text-5xl mb-4"><span className='text-green-600'>{program.emoji}</span></div>
+                <div className="text-5xl mb-4 "><span className='text-green-600'>{program.emoji}</span></div>
 
                 {/* Title */}
                 <h3 className="text-lg font-bold text-white mb-2">{program.title}</h3>
