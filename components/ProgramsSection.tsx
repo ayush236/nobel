@@ -1,12 +1,20 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
+import { IoIosColorPalette } from "react-icons/io";
+import { MdOutlineMenuBook } from "react-icons/md";
+import { GiMicroscope } from "react-icons/gi";
+import { RiGraduationCapFill } from "react-icons/ri";
+
+
+
+
 import type { Program } from '@/types'
 
 const ProgramsSection: FC = () => {
   const programs: Program[] = [
     {
       id: 1,
-      emoji: '🎨',
+      emoji: <IoIosColorPalette />,
       title: 'Montessori / Pre-School',
       description: 'Play-based early childhood development for ages 3–5.',
       duration: '2 Years',
@@ -19,7 +27,7 @@ const ProgramsSection: FC = () => {
     },
     {
       id: 2,
-      emoji: '📖',
+      emoji: <MdOutlineMenuBook />,
       title: 'Primary School',
       description: 'Core subjects: English, Nepali, Math, Science, Social Studies.',
       duration: '5 Years',
@@ -32,7 +40,7 @@ const ProgramsSection: FC = () => {
     },
     {
       id: 3,
-      emoji: '🔬',
+      emoji: <GiMicroscope />,
       title: 'Lower Secondary',
       description: 'Foundation curriculum plus Computer Education.',
       duration: '3 Years',
@@ -45,7 +53,7 @@ const ProgramsSection: FC = () => {
     },
     {
       id: 4,
-      emoji: '🎓',
+      emoji: <RiGraduationCapFill />,
       title: 'Secondary School',
       description: 'SEE Preparation, NEB Affiliated comprehensive curriculum.',
       duration: '2 Years',
@@ -86,9 +94,12 @@ const ProgramsSection: FC = () => {
                 backgroundPosition: 'center'
               }}
             >
-              <div className="p-6 h-full flex flex-col justify-between">
+              <div className="p-6 h-full flex flex-col justify-between relative ">
+                  {/* Hidden content */}
+
+                <div className='opacity-0 hover:opacity-100 transition duration-300'>
                 {/* Emoji */}
-                <div className="text-5xl mb-4">{program.emoji}</div>
+                <div className="text-5xl mb-4"><span className='text-green-600'>{program.emoji}</span></div>
 
                 {/* Title */}
                 <h3 className="text-lg font-bold text-white mb-2">{program.title}</h3>
@@ -113,6 +124,7 @@ const ProgramsSection: FC = () => {
                 >
                   Apply Now
                 </Link>
+              </div>
               </div>
             </div>
           ))}
