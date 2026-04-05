@@ -78,8 +78,30 @@ export const programs: Program[] = [
     description:
       'The Secondary program prepares students for the SEE (Secondary Education Examination) with comprehensive NEB-affiliated curriculum and dedicated exam preparation.',
     objectives: [
-      'Complete NEB Grade 9–10 curriculum',
-      'Intensive SEE examination preparation',
+      'Complete NEB Grade +2 curriculum',
+      'Intensive SLC examination preparation',
+      'Science, Math, English, Nepali, Social Studies, Optional Math',
+      'Practical lab work and project-based learning'
+    ],
+    career: [
+      'Higher Secondary (+2) enrollment',
+      'Foundation for engineering, medicine, management and humanities'
+    ],
+    image: '/images/secondary.jpg'
+  },
+  {
+    id: 5,
+    slug: 'higher-secondary',
+    emoji: '🎓',
+    title: 'Higher Secondary School',
+    level: 'Grade 11–12',
+    duration: '2 Years',
+    credits: 'N/A',
+    description:
+      'The higher Secondary program prepares students for the SLC (Secondary Education Examination) with comprehensive NEB-affiliated curriculum and dedicated exam preparation.',
+    objectives: [
+      'Complete NEB Grade 11–12 curriculum',
+      'Intensive SLC examination preparation',
       'Science, Math, English, Nepali, Social Studies, Optional Math',
       'Practical lab work and project-based learning'
     ],
