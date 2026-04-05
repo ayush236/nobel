@@ -18,7 +18,9 @@ const PrincipalPage: FC = () => {
 
       {/* Navigation Tabs */}
       <section className="py-6 px-6 bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto flex flex-wrap gap-4">
+        
+        <div className="max-w-7xl mx-auto flex flex-wrap gap-4 justify-between">
+          <div>
           <Link
             href="/about/introduction"
             className="px-6 py-2 rounded-lg font-medium text-gray-700 hover:bg-green-50 hover:text-green-700 transition"
@@ -37,6 +39,15 @@ const PrincipalPage: FC = () => {
           >
             Org Structure
           </Link>
+          </div>
+          <div className='mt-1'>
+          <Link
+                    href="/brochure"
+                    className="text-center px-6 py-2 border-2 border-green-700 text-green-700 font-bold rounded-lg hover:bg-green-50 transition duration-300"
+                  >
+                    Download Brochure
+                  </Link>
+                  </div>
         </div>
       </section>
 
