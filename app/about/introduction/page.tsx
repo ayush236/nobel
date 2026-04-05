@@ -89,7 +89,8 @@ const IntroductionPage: FC = () => {
 
       {/* Navigation Tabs */}
       <section className="py-6 px-6 bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto flex flex-wrap gap-4">
+        <div className="max-w-7xl mx-auto flex flex-wrap gap-4 justify-between align-middle ">
+          <div className="flex flex-wrap gap-4">
           <Link
             href="/about/introduction"
             className="px-6 py-2 rounded-lg font-medium bg-green-700 text-white transition"
@@ -108,7 +109,17 @@ const IntroductionPage: FC = () => {
           >
             Org Structure
           </Link>
-        </div>
+          </div>
+          <div className='mt-1'>
+          <Link
+                    href="/brochure"
+                    className="text-center px-6 py-2 border-2 border-green-700 text-green-700 font-bold rounded-lg hover:bg-green-50 transition duration-300"
+                  >
+                    Download Brochure
+                  </Link>
+                  </div>
+                  </div>
+
       </section>
 
       {/* Main Content */}
@@ -158,52 +169,8 @@ const IntroductionPage: FC = () => {
 
             {/* Right Column - Sticky Sidebar */}
             <div className="lg:col-span-1">
-              {/* Quick Info Card */}
-              <div className="sticky top-24 bg-green-50 border-2 border-green-200 rounded-2xl p-6 mb-6">
-                <h3 className="text-lg font-bold text-green-900 mb-6">Quick Info</h3>
 
-                <div className="space-y-4 text-sm mb-8">
-                  <div className="flex gap-3">
-                    <span className="text-xl">📍</span>
-                    <span className="text-gray-700">Tilottama-15, Kotihawa, Rupandehi, Nepal</span>
-                  </div>
-                  <div className="flex gap-3">
-                    <span className="text-xl">📞</span>
-                    <div className="text-gray-700">
-                      <div>071-514220</div>
-                      <div>9857054560</div>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <span className="text-xl">📧</span>
-                    <span className="text-gray-700">nobelacademy68@gmail.com</span>
-                  </div>
-                  <div className="flex gap-3">
-                    <span className="text-xl">🏫</span>
-                    <span className="text-gray-700">Est. 2068 B.S.</span>
-                  </div>
-                  <div className="flex gap-3">
-                    <span className="text-xl">🎓</span>
-                    <span className="text-gray-700">NEB Affiliated</span>
-                  </div>
-                </div>
-
-                {/* Buttons */}
-                <div className="space-y-3">
-                  <Link
-                    href="/contact"
-                    className="block w-full text-center px-6 py-3 bg-green-700 hover:bg-green-800 text-white font-bold rounded-lg transition duration-300"
-                  >
-                    Apply Now
-                  </Link>
-                  <Link
-                    href="/brochure"
-                    className="block w-full text-center px-6 py-3 border-2 border-green-700 text-green-700 font-bold rounded-lg hover:bg-green-50 transition duration-300"
-                  >
-                    Download Brochure
-                  </Link>
-                </div>
-              </div>
+            
 
               {/* Recent Notices Card */}
               <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6">
