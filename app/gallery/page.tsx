@@ -33,7 +33,7 @@ const GalleryPage: FC = () => {
   return (
     <div className="bg-white">
       {/* Page Banner */}
-      <PageBanner title="Gallery" breadcrumbs={breadcrumbs} image="/cultural.jpg" />
+      <PageBanner title="Gallery" breadcrumbs={breadcrumbs} image="/images/cultural.jpg" />
 
       {/* Main Content */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gray-50">

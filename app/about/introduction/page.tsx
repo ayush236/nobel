@@ -84,7 +84,7 @@ const IntroductionPage: FC = () => {
           { label: 'About', href: '/about' },
           { label: 'Introduction', href: '/about/introduction' }
         ]}
-        image="/team.jpg"
+        image="/images/team.jpg"
       />
 
       {/* Navigation Tabs */}

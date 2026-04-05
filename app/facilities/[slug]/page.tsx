@@ -8,11 +8,11 @@ interface PageProps {
 }
 
 const facilityImages: Record<string, string> = {
-  library: '/library.jpg',
-  'science-lab': '/science2.jpg',
-  sports: '/sports.jpg',
-  transportation: '/schoolbus.png',
-  cafeteria: '/cafeteria.jpg'
+  library: '/images/library.jpg',
+  'science-lab': '/images/science2.jpg',
+  sports: '/images/sports.jpg',
+  transportation: '/images/schoolbus.png',
+  cafeteria: '/images/cafeteria.jpg'
 }
 
 const FacilityDetailPage: FC<PageProps> = async ({ params }) => {
@@ -29,7 +29,7 @@ const FacilityDetailPage: FC<PageProps> = async ({ params }) => {
             { label: 'Facilities', href: '/facilities' },
             { label: 'Not Found', href: '#' }
           ]}
-          image="/homeb.jpg"
+          image="/images/homeb.jpg"
         />
         <section className="flex-1 py-16 px-6 bg-gray-50">
           <div className="max-w-7xl mx-auto text-center">
@@ -60,7 +60,7 @@ const FacilityDetailPage: FC<PageProps> = async ({ params }) => {
           { label: 'Facilities', href: '/facilities' },
           { label: facility.title, href: `#` }
         ]}
-        image={facilityImages[facility.slug] ?? '/homeb.jpg'}
+        image={facilityImages[facility.slug] ?? '/images/homeb.jpg'}
       />
 
       {/* Main Content */}

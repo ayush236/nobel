@@ -15,7 +15,7 @@ export default function CalendarPage() {
           { label: 'Home', href: '/' },
           { label: 'Calendar', href: '/calendar' }
         ]}
-        image="/homec.jpg"
+        image="/images/homec.jpg"
       />
       <div className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">

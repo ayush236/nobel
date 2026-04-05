@@ -21,7 +21,7 @@ export const programs: Program[] = [
       'Smooth transition to Grade 1',
       'Strong foundation for lifelong learning'
     ],
-    image: '/montessori.jpg'
+    image: '/images/monteshri.jpg'
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ export const programs: Program[] = [
       'Prepared for Lower Secondary curriculum',
       'Strong academic base for future studies'
     ],
-    image: '/primary.jpg'
+    image: '/images/primary.jpg'
   },
   {
     id: 3,
@@ -65,7 +65,7 @@ export const programs: Program[] = [
       'Readiness for SEE-level Secondary program',
       'Exposure to science and technology fields'
     ],
-    image: '/lower_secondary.jpg'
+    image: '/images/lower secondary.jpg'
   },
   {
     id: 4,
@@ -87,7 +87,7 @@ export const programs: Program[] = [
       'Higher Secondary (+2) enrollment',
       'Foundation for engineering, medicine, management and humanities'
     ],
-    image: '/secondary.jpg'
+    image: '/images/secondary.jpg'
   }
 ]
 
@@ -226,25 +226,25 @@ export const notices: Notice[] = [
 ]
 
 export const galleryImages: GalleryImage[] = [
-  { id: 1, title: 'Primary School', category: 'Academic', bgColor: 'bg-blue-200', image: '/primary.jpg' },
-  { id: 2, title: 'Secondary School', category: 'Academic', bgColor: 'bg-blue-200', image: '/secondary.jpg' },
-  { id: 3, title: 'Lower Secondary', category: 'Academic', bgColor: 'bg-blue-200', image: '/lower secondary.jpg' },
-  { id: 4, title: 'Montessori Program', category: 'Academic', bgColor: 'bg-blue-200', image: '/monteshri.jpg' },
-  { id: 5, title: 'Science Lab', category: 'Academic', bgColor: 'bg-blue-200', image: '/sciencelab.png' },
-  { id: 6, title: 'Science Exhibition', category: 'Academic', bgColor: 'bg-blue-200', image: '/science2.jpg' },
-  { id: 7, title: 'Library', category: 'Academic', bgColor: 'bg-blue-200', image: '/library.jpg' },
-  { id: 8, title: 'Annual Sports Meet', category: 'Sports', bgColor: 'bg-green-200', image: '/sports.jpg' },
-  { id: 9, title: 'Sports Activities', category: 'Sports', bgColor: 'bg-green-200', image: '/sport.png' },
-  { id: 10, title: 'Cultural Program', category: 'Events', bgColor: 'bg-orange-200', image: '/cultural.jpg' },
-  { id: 11, title: 'Dashain Celebration', category: 'Events', bgColor: 'bg-orange-200', image: '/cultural2.jpg' },
-  { id: 12, title: 'Cultural Event', category: 'Events', bgColor: 'bg-orange-200', image: '/culture.jpg' },
-  { id: 13, title: 'Parents Meeting', category: 'Events', bgColor: 'bg-pink-200', image: '/parents.jpg' },
-  { id: 14, title: 'Notice Board', category: 'Events', bgColor: 'bg-yellow-200', image: '/notice.jpg' },
-  { id: 15, title: 'Cafeteria', category: 'Campus', bgColor: 'bg-orange-200', image: '/cafeteria.jpg' },
-  { id: 16, title: 'Campus Garden', category: 'Campus', bgColor: 'bg-teal-200', image: '/plant.jpg' },
-  { id: 17, title: 'Team', category: 'Campus', bgColor: 'bg-amber-200', image: '/team.jpg' },
-  { id: 18, title: 'Award Ceremony', category: 'Campus', bgColor: 'bg-yellow-200', image: '/award.jpg' },
-  { id: 19, title: 'School Bus', category: 'Campus', bgColor: 'bg-lime-200', image: '/schoolbus.png' }
+  { id: 1, title: 'Primary School', category: 'Academic', bgColor: 'bg-blue-200', image: '/images/primary.jpg' },
+  { id: 2, title: 'Secondary School', category: 'Academic', bgColor: 'bg-blue-200', image: '/images/secondary.jpg' },
+  { id: 3, title: 'Lower Secondary', category: 'Academic', bgColor: 'bg-blue-200', image: '/images/lower secondary.jpg' },
+  { id: 4, title: 'Montessori Program', category: 'Academic', bgColor: 'bg-blue-200', image: '/images/monteshri.jpg' },
+  { id: 5, title: 'Science Lab', category: 'Academic', bgColor: 'bg-blue-200', image: '/images/sciencelab.png' },
+  { id: 6, title: 'Science Exhibition', category: 'Academic', bgColor: 'bg-blue-200', image: '/images/science2.jpg' },
+  { id: 7, title: 'Library', category: 'Academic', bgColor: 'bg-blue-200', image: '/images/library.jpg' },
+  { id: 8, title: 'Annual Sports Meet', category: 'Sports', bgColor: 'bg-green-200', image: '/images/sports.jpg' },
+  { id: 9, title: 'Sports Activities', category: 'Sports', bgColor: 'bg-green-200', image: '/images/sport.png' },
+  { id: 10, title: 'Cultural Program', category: 'Events', bgColor: 'bg-orange-200', image: '/images/cultural.jpg' },
+  { id: 11, title: 'Dashain Celebration', category: 'Events', bgColor: 'bg-orange-200', image: '/images/cultural2.jpg' },
+  { id: 12, title: 'Cultural Event', category: 'Events', bgColor: 'bg-orange-200', image: '/images/culture.jpg' },
+  { id: 13, title: 'Parents Meeting', category: 'Events', bgColor: 'bg-pink-200', image: '/images/parents.jpg' },
+  { id: 14, title: 'Notice Board', category: 'Events', bgColor: 'bg-yellow-200', image: '/images/notice.jpg' },
+  { id: 15, title: 'Cafeteria', category: 'Campus', bgColor: 'bg-orange-200', image: '/images/cafeteria.jpg' },
+  { id: 16, title: 'Campus Garden', category: 'Campus', bgColor: 'bg-teal-200', image: '/images/plant.jpg' },
+  { id: 17, title: 'Team', category: 'Campus', bgColor: 'bg-amber-200', image: '/images/team.jpg' },
+  { id: 18, title: 'Award Ceremony', category: 'Campus', bgColor: 'bg-yellow-200', image: '/images/award.jpg' },
+  { id: 19, title: 'School Bus', category: 'Campus', bgColor: 'bg-lime-200', image: '/images/schoolbus.png' }
 ]
 
 export const calendarEvents: CalendarEvent[] = [
@@ -260,7 +260,7 @@ export const calendarEvents: CalendarEvent[] = [
     year: 2083,
     type: 'Examination',
     description: 'First terminal examination for all classes from Grade 1 to Grade 10.',
-    image: '/science2.jpg'
+    image: '/images/science2.jpg'
   },
   {
     id: 2,
@@ -274,7 +274,7 @@ export const calendarEvents: CalendarEvent[] = [
     year: 2083,
     type: 'Examination',
     description: 'Half yearly examination for all classes from Grade 1 to Grade 10.',
-    image: '/sports.jpg'
+    image: '/images/sports.jpg'
   },
   {
     id: 3,
@@ -288,7 +288,7 @@ export const calendarEvents: CalendarEvent[] = [
     year: 2083,
     type: 'Festival',
     description: 'Dashain festival holiday. School will remain closed.',
-    image: '/cultural.jpg'
+    image: '/images/cultural.jpg'
   },
   {
     id: 4,
@@ -302,7 +302,7 @@ export const calendarEvents: CalendarEvent[] = [
     year: 2083,
     type: 'Festival',
     description: 'Tihar festival holiday. School will remain closed.',
-    image: '/parents.jpg'
+    image: '/images/parents.jpg'
   },
   {
     id: 5,
@@ -316,7 +316,7 @@ export const calendarEvents: CalendarEvent[] = [
     year: 2083,
     type: 'Examination',
     description: 'Third terminal examination for all classes from Grade 1 to Grade 10.',
-    image: '/plant.jpg'
+    image: '/images/plant.jpg'
   },
   {
     id: 6,
@@ -330,6 +330,6 @@ export const calendarEvents: CalendarEvent[] = [
     year: 2083,
     type: 'Examination',
     description: 'Annual final examination for all classes. Results will be published within 2 weeks.',
-    image: '/home.png'
+    image: '/images/homea.jpg'
   }
 ]

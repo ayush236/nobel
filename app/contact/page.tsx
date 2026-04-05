@@ -13,7 +13,7 @@ const ContactPage: FC = () => {
   return (
     <div className="bg-white">
       {/* Page Banner */}
-      <PageBanner title="Contact Us" breadcrumbs={breadcrumbs} image="/contact.png" />
+      <PageBanner title="Contact Us" breadcrumbs={breadcrumbs} image="/images/contact.png" />
 
       {/* Main Content */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gray-50">

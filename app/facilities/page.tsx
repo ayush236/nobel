@@ -13,7 +13,7 @@ const FacilitiesPage: FC = () => {
           { label: 'Home', href: '/' },
           { label: 'Facilities', href: '/facilities' }
         ]}
-        image="/homeb.jpg"
+        image="/images/homeb.jpg"
       />
 
       {/* Introduction Section */}
