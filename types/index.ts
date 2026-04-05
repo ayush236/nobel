@@ -18,7 +18,7 @@ export type FeatureCard = {
 export type Program = {
   id: number
   slug: string
-  emoji: string
+  emoji: React.ReactNode
   title: string
   level: string
   duration: string

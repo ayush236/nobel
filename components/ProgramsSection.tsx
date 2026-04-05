@@ -1,20 +1,13 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
-import { IoIosColorPalette } from "react-icons/io";
-import { MdOutlineMenuBook } from "react-icons/md";
-import { GiMicroscope } from "react-icons/gi";
-import { RiGraduationCapFill } from "react-icons/ri";
-
-
-
-
+import { Palette, BookOpen, Microscope, GraduationCap } from 'lucide-react'
 import type { Program } from '@/types'
 
 const ProgramsSection: FC = () => {
   const programs: Program[] = [
     {
       id: 1,
-      emoji: <IoIosColorPalette />,
+      emoji: <Palette className="w-12 h-12 text-green-500" />,
       title: 'Montessori / Pre-School',
       description: 'Play-based early childhood development for ages 3–5.',
       duration: '2 Years',
@@ -27,7 +20,7 @@ const ProgramsSection: FC = () => {
     },
     {
       id: 2,
-      emoji: <MdOutlineMenuBook />,
+      emoji: <BookOpen className="w-12 h-12 text-green-500" />,
       title: 'Primary School',
       description: 'Core subjects: English, Nepali, Math, Science, Social Studies.',
       duration: '5 Years',
@@ -40,7 +33,7 @@ const ProgramsSection: FC = () => {
     },
     {
       id: 3,
-      emoji: <GiMicroscope />,
+      emoji: <Microscope className="w-12 h-12 text-green-500" />,
       title: 'Lower Secondary',
       description: 'Foundation curriculum plus Computer Education.',
       duration: '3 Years',
@@ -53,7 +46,7 @@ const ProgramsSection: FC = () => {
     },
     {
       id: 4,
-      emoji: <RiGraduationCapFill />,
+      emoji: <GraduationCap className="w-12 h-12 text-green-500" />,
       title: 'Secondary School',
       description: 'SEE Preparation, NEB Affiliated comprehensive curriculum.',
       duration: '2 Years',
@@ -118,12 +111,14 @@ const ProgramsSection: FC = () => {
                 </div>
 
                 {/* Apply Now Button */}
+                <div className=' flex justify-center'>
                 <Link
                   href="/contact"
-                  className="block w-full text-center px-4 py-3 bg-green-700 hover:bg-green-800 text-white font-bold rounded-lg transition duration-300"
+                  className="block  w-1/2 text-center px-4 py-3 bg-green-700 hover:bg-green-600 text-white font-bold rounded-lg transition duration-300"
                 >
                   Apply Now
                 </Link>
+                </div>
               </div>
               </div>
             </div>
