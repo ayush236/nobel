@@ -100,41 +100,10 @@ const PrincipalPage: FC = () => {
             {/* Right Column - Sidebar */}
             <div className="lg:col-span-1">
               {/* Principal Info Card */}
-              <div className="sticky top-24 bg-green-50 border-2 border-green-200 rounded-2xl p-6 mb-6">
-                <h3 className="text-lg font-bold text-green-900 mb-6">Principal</h3>
+              <div className="sticky top-24 bg-green-50 border-2 border-green-200 rounded-2xl p-6 mb-6 h-auto">
 
-                <div className="bg-gray-300 w-32 h-32 rounded-lg mx-auto mb-6"></div>
+                <div className="bg-gray-300  h-96 rounded-lg mx-auto "></div>
 
-                <div className="space-y-4 text-sm mb-8">
-                  <div>
-                    <h4 className="font-bold text-green-900">Sundar Gurung</h4>
-                    <p className="text-gray-600">Principal</p>
-                  </div>
-                  <div className="flex gap-3">
-                    <span className="text-xl">📧</span>
-                    <span className="text-gray-700">sundar@nobelacademy.edu.np</span>
-                  </div>
-                  <div className="flex gap-3">
-                    <span className="text-xl">📞</span>
-                    <span className="text-gray-700">+977-71-540444</span>
-                  </div>
-                </div>
-
-                {/* Buttons */}
-                <div className="space-y-3">
-                  <Link
-                    href="/contact"
-                    className="block w-full text-center px-6 py-3 bg-green-700 hover:bg-green-800 text-white font-bold rounded-lg transition duration-300"
-                  >
-                    Apply Now
-                  </Link>
-                  <Link
-                    href="/brochure"
-                    className="block w-full text-center px-6 py-3 border-2 border-green-700 text-green-700 font-bold rounded-lg hover:bg-green-50 transition duration-300"
-                  >
-                    Download Brochure
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
