@@ -73,7 +73,7 @@ const HeroSlider: FC = () => {
   }
 
   return (
-    <div className="relative min-h-screen md:h-screen overflow-hidden">
+    <div id="hero" className="relative min-h-screen md:h-screen overflow-hidden">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div

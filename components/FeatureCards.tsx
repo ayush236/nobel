@@ -1,29 +1,30 @@
 import React, { FC } from 'react'
 import type { FeatureCard } from '@/types'
+import { Leaf, BookOpen, UserCheck, Trophy } from 'lucide-react'
 
 const FeatureCards: FC = () => {
   const features: FeatureCard[] = [
     {
       id: 1,
-      emoji: '🌿',
+      icon: <Leaf className="h-12 w-12 text-green-700" />,
       title: 'Eco-Friendly Campus',
       description: 'Green, peaceful environment in Kotihawa inspiring focused and healthy learning.'
     },
     {
       id: 2,
-      emoji: '📚',
+      icon: <BookOpen className="h-12 w-12 text-green-700" />,
       title: 'Holistic Education',
       description: 'Structured, age-appropriate learning from Montessori through Grade 10.'
     },
     {
       id: 3,
-      emoji: '👨‍🏫',
+      icon: <UserCheck className="h-12 w-12 text-green-700" />,
       title: 'Dedicated Teachers',
       description: 'Qualified and caring faculty committed to all-round student development.'
     },
     {
       id: 4,
-      emoji: '🏆',
+      icon: <Trophy className="h-12 w-12 text-green-700" />,
       title: 'Proven Excellence',
       description: 'Consistent academic results and co-curricular achievements since 2068 B.S.'
     }
@@ -40,10 +41,12 @@ const FeatureCards: FC = () => {
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="bg-white border-t-4 border-green-700 rounded-lg shadow-md p-6 hover:scale-105 transition-transform duration-300"
+              className="group bg-white border-t-4 border-green-700 rounded-lg shadow-md p-6 transform transition duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="text-5xl mb-4">{feature.emoji}</div>
-              <h3 className="text-lg font-bold text-green-900 mb-3">{feature.title}</h3>
+              <div className="mb-4 inline-flex items-center justify-center rounded-full bg-green-50 p-4 text-green-700 transition-colors duration-300 group-hover:bg-green-100 group-hover:text-green-900">
+                {feature.icon}
+              </div>
+              <h3 className="text-lg font-bold text-green-900 mb-3 transition-colors duration-300 group-hover:text-green-800">{feature.title}</h3>
               <p className="text-gray-700 text-sm leading-relaxed">{feature.description}</p>
             </div>
           ))}

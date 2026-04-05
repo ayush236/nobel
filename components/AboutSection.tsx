@@ -60,6 +60,9 @@ const AboutSection: FC = () => {
             <div className="relative bg-gray-200 rounded-2xl aspect-video overflow-hidden">
               <MuxPlayer
                 playbackId="z01mNqcbPO4qQnjUNvCgiMA59Kja5kWuxaUzxdeL8WnY"
+                autoPlay
+                muted
+                playsInline
                 style={{ width: '100%', height: '100%' }}
               />
             </div>

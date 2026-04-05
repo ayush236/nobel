@@ -187,7 +187,7 @@ const Navbar: FC = () => {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0">
+          <Link href="/#hero" className="flex items-center gap-3 shrink-0">
             <Image
               src="/logo.png"
               alt="Nobel Environment Academy Logo"
@@ -195,9 +195,7 @@ const Navbar: FC = () => {
               height={44}
               className="object-contain"
             />
-            <span className="text-base font-bold text-green-900 leading-tight hidden sm:block">
-              Nobel Environment Academy
-            </span>
+          
           </Link>
 
           {/* Desktop Nav */}
