@@ -28,7 +28,7 @@ const OrgStructurePage: FC = () => {
 
   return (
     <div className="flex flex-col">
-      <PageBanner title="Organization Structure" breadcrumbs={breadcrumbs} image="/team.jpg" />
+      <PageBanner title="Organization Structure" breadcrumbs={breadcrumbs} image="/images/team.jpg" />
 
       {/* Navigation Tabs */}
       <section className="py-6 px-6 bg-white border-b border-gray-200">

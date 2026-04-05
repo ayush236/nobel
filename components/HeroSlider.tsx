@@ -15,7 +15,7 @@ const HeroSlider: FC = () => {
       primaryBtn: { label: 'About Us', href: '/about' },
       secondaryBtn: { label: 'Apply Now', href: '/contact' },
       bgClass: 'from-green-900 to-green-700',
-      bgImage: '/homea.jpg'
+      bgImage: '/images/homea.jpg'
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const HeroSlider: FC = () => {
       primaryBtn: { label: 'Our Programs', href: '/programs' },
       secondaryBtn: { label: 'Contact Us', href: '/contact' },
       bgClass: 'from-green-800 to-teal-700',
-      bgImage: '/homeb.jpg'
+      bgImage: '/images/homeb.jpg'
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ const HeroSlider: FC = () => {
       primaryBtn: { label: 'About Us', href: '/about' },
       secondaryBtn: { label: 'Apply Now', href: '/contact' },
       bgClass: 'from-teal-900 to-green-800',
-      bgImage: '/homec.jpg'
+      bgImage: '/images/homec.jpg'
     },
     {
       id: 4,
@@ -43,7 +43,7 @@ const HeroSlider: FC = () => {
       primaryBtn: { label: 'Meet Our Team', href: '/about/team' },
       secondaryBtn: { label: 'Learn More', href: '/about' },
       bgClass: 'from-green-900 to-emerald-800',
-      bgImage: '/homed.png'
+      bgImage: '/images/homed.png'
     },
     {
       id: 5,
@@ -52,7 +52,7 @@ const HeroSlider: FC = () => {
       primaryBtn: { label: 'Apply Now', href: '/contact' },
       secondaryBtn: { label: 'Schedule Visit', href: '/contact' },
       bgClass: 'from-emerald-900 to-green-800',
-      bgImage: '/homee.png'
+      bgImage: '/images/homee.png'
     }
   ]
 

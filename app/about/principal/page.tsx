@@ -13,7 +13,7 @@ const PrincipalPage: FC = () => {
           { label: 'About', href: '/about' },
           { label: 'Message from Principal', href: '/about/principal' }
         ]}
-        image="/team.jpg"
+        image="/images/team.jpg"
       />
 
       {/* Navigation Tabs */}

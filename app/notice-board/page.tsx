@@ -31,7 +31,7 @@ const NoticeBoard: FC = () => {
   return (
     <div className="bg-white">
       {/* Page Banner */}
-      <PageBanner title="Notice Board" breadcrumbs={breadcrumbs} image="/notice.jpg" />
+      <PageBanner title="Notice Board" breadcrumbs={breadcrumbs} image="/images/notice.jpg" />
 
       {/* Main Content */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gray-50">

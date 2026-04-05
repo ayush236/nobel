@@ -21,7 +21,7 @@ const ProgramsPage: FC = () => {
           { label: 'Home', href: '/' },
           { label: 'Programs', href: '/programs' }
         ]}
-        image="/homea.jpg"
+        image="/images/homea.jpg"
       />
 
       {/* Introduction Section */}

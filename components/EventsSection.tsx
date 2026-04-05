@@ -4,12 +4,12 @@ import type { Event } from '@/types'
 
 const EventsSection: FC = () => {
   const events: Event[] = [
-    { id: 1, day: '15', month: 'May', title: 'Graduation Ceremony', image: '/homee.jpg' },
-    { id: 2, day: '22', month: 'May', title: 'Annual Sports Meet', image: '/sports.jpg' },
-    { id: 3, day: '28', month: 'May', title: 'Science Exhibition', image: '/science2.jpg' },
-    { id: 4, day: '05', month: 'June', title: 'Cultural Program', image: '/cultural.jpg' },
-    { id: 5, day: '12', month: 'June', title: 'Parents Meeting', image: '/parents.jpg' },
-    { id: 6, day: '20', month: 'June', title: 'Tree Plantation Drive', image: '/plant.jpg' }
+    { id: 1, day: '15', month: 'May', title: 'Graduation Ceremony', image: '/images/homee.png' },
+    { id: 2, day: '22', month: 'May', title: 'Annual Sports Meet', image: '/images/sports.jpg' },
+    { id: 3, day: '28', month: 'May', title: 'Science Exhibition', image: '/images/science2.jpg' },
+    { id: 4, day: '05', month: 'June', title: 'Cultural Program', image: '/images/cultural.jpg' },
+    { id: 5, day: '12', month: 'June', title: 'Parents Meeting', image: '/images/parents.jpg' },
+    { id: 6, day: '20', month: 'June', title: 'Tree Plantation Drive', image: '/images/plant.jpg' }
   ]
 
   return (

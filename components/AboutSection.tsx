@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
+import MuxPlayer from '@mux/mux-player-react'
 
 interface InfoPill {
   label: string
@@ -57,13 +58,10 @@ const AboutSection: FC = () => {
           {/* Right Side - Video */}
           <div className="flex-1 w-full">
             <div className="relative bg-gray-200 rounded-2xl aspect-video overflow-hidden">
-              <video
-                className="w-full h-full object-cover"
-                controls
-              >
-                <source src="/nobelvdo.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <MuxPlayer
+                playbackId="z01mNqcbPO4qQnjUNvCgiMA59Kja5kWuxaUzxdeL8WnY"
+                style={{ width: '100%', height: '100%' }}
+              />
             </div>
           </div>
         </div>
