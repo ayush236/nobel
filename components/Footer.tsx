@@ -1,5 +1,8 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
+import { FaFacebook } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+
 
 interface FooterLink {
   label: string
@@ -80,9 +83,24 @@ const Footer: FC = () => {
                 </button>
               </form>
             </div>
+
+            {/* Social Media Icons */}
+        <div className=' flex gap-4 text-3xl '>
+          <span>
+            <Link href=""><FaFacebook /></Link>
+          </span>
+          <span>
+            <Link href=""><FaYoutube /></Link>
+          </span>
+        </div>
           </div>
         </div>
+        <div>
+          
+        </div>
       </div>
+
+      
 
       {/* Bottom Divider & Copyright */}
       <div className="border-t border-green-800 px-4 sm:px-6 py-4 sm:py-6">
@@ -98,6 +116,8 @@ const Footer: FC = () => {
           </div>
         </div>
       </div>
+
+      
     </footer>
   )
 }
