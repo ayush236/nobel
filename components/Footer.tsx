@@ -1,7 +1,12 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
 import { FaFacebook } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
+import { FaYoutube, FaPhoneAlt } from "react-icons/fa";
+import { IoMail } from "react-icons/io5";
+import { CiClock2, CiClock1 } from "react-icons/ci";
+
+
+
 
 
 interface FooterLink {
@@ -56,10 +61,10 @@ const Footer: FC = () => {
             <div>
               <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4">Contact</h3>
               <div className="space-y-2 sm:space-y-3 text-gray-300 text-xs sm:text-sm">
-                <p>📞 +977-71-540444</p>
-                <p>✉️ sundargurung@gmail.com</p>
-                <p>🕐 sun-Fri: 9:00 AM - 4:00 PM</p>
-                <p>🕐 Sat: 9:00 AM - 1:00 PM</p>
+                <p className='flex items-center gap-2'><FaPhoneAlt /> +977-71-540444</p>
+                <p className='flex items-center gap-2'><IoMail /> sundargurung@gmail.com</p>
+                <p className='flex items-center gap-2'><CiClock2 />sun-Fri: 9:00 AM - 4:00 PM</p>
+                <p className='flex items-center gap-2'><CiClock1 /> Sat: 9:00 AM - 1:00 PM</p>
               </div>
             </div>
 
