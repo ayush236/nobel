@@ -54,8 +54,8 @@ const Footer: FC = () => {
               <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4">Contact</h3>
               <div className="space-y-2 sm:space-y-3 text-gray-300 text-xs sm:text-sm">
                 <p>📞 +977-71-540444</p>
-                <p>✉️ info@nobelacademy.edu.np</p>
-                <p>🕐 Mon-Fri: 9:00 AM - 4:00 PM</p>
+                <p>✉️ sundargurung@gmail.com</p>
+                <p>🕐 sun-Fri: 9:00 AM - 4:00 PM</p>
                 <p>🕐 Sat: 9:00 AM - 1:00 PM</p>
               </div>
             </div>
