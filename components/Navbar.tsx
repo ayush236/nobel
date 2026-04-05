@@ -33,7 +33,8 @@ const navItems: NavItem[] = [
       { label: 'Montessori & Pre-School', href: '/programs/montessori' },
       { label: 'Primary (Grade 1–5)', href: '/programs/primary' },
       { label: 'Lower Secondary (Grade 6–8)', href: '/programs/lower-secondary' },
-      { label: 'Secondary (Grade 9–10)', href: '/programs/secondary' }
+      { label: 'Secondary (Grade 9–10)', href: '/programs/secondary' },
+      { label: 'Higher Secondary (Grade 11–12)', href: '/programs/higher-secondary' }
     ]
   },
   {
