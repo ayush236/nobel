@@ -1,117 +1,97 @@
 'use client'
 
-import React, { FC, useState } from 'react'
+import React, { FC, useActionState, useEffect, useState } from 'react'
+import { sendContactEmail } from '@/app/actions/sendEmail'
 
-interface FormData {
-  name: string
-  email: string
-  phone: string
-  subject: string
-  message: string
-}
+const initialState = { success: false, message: '' }
 
-interface FormErrors {
+interface Errors {
   name?: string
   email?: string
+  phone?: string
+  subject?: string
   message?: string
 }
 
+const inputClass = (error?: string) =>
+  `w-full border rounded-lg p-2.5 sm:p-3 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all text-sm ${
+    error ? 'border-red-400 bg-red-50' : 'border-gray-300'
+  }`
+
 const ContactForm: FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  })
+  const [state, formAction, pending] = useActionState(sendContactEmail, initialState)
+  const [toast, setToast] = useState<{ success: boolean; message: string } | null>(null)
+  const [errors, setErrors] = useState<Errors>({})
 
-  const [formErrors, setFormErrors] = useState<FormErrors>({})
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  useEffect(() => {
+    if (!state.message) return
+    setToast({ success: state.success, message: state.message })
+    const t = setTimeout(() => setToast(null), 10000)
+    return () => clearTimeout(t)
+  }, [state])
 
-  // Email validation regex
-  const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    return emailRegex.test(email)
+  const validate = (form: HTMLFormElement): boolean => {
+    const data = new FormData(form)
+    const name    = (data.get('name')    as string).trim()
+    const email   = (data.get('email')   as string).trim()
+    const phone   = (data.get('phone')   as string).trim()
+    const subject = (data.get('subject') as string).trim()
+    const message = (data.get('message') as string).trim()
+    const errs: Errors = {}
+
+    if (!name) errs.name = 'Full name is required.'
+    else if (name.length < 3) errs.name = 'Name must be at least 3 characters.'
+
+    if (!email) errs.email = 'Email address is required.'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errs.email = 'Enter a valid email address.'
+
+    if (!phone) errs.phone = 'Phone number is required.'
+    else if (!/^\d+$/.test(phone)) errs.phone = 'Phone must contain numbers only.'
+    else if (phone.length !== 10) errs.phone = 'Phone must be exactly 10 digits.'
+
+    if (!subject) errs.subject = 'Please select a subject.'
+
+    if (!message) errs.message = 'Message is required.'
+    else if (message.length < 10) errs.message = 'Message must be at least 10 characters.'
+
+    setErrors(errs)
+    return Object.keys(errs).length === 0
   }
 
-  // Form validation
-  const validateForm = (): boolean => {
-    const errors: FormErrors = {}
-
-    if (!formData.name.trim()) {
-      errors.name = 'Full name is required'
-    }
-
-    if (!formData.email.trim()) {
-      errors.email = 'Email address is required'
-    } else if (!validateEmail(formData.email)) {
-      errors.email = 'Please enter a valid email address'
-    }
-
-    if (!formData.message.trim()) {
-      errors.message = 'Message is required'
-    } else if (formData.message.trim().length < 10) {
-      errors.message = 'Message must be at least 10 characters'
-    }
-
-    setFormErrors(errors)
-    return Object.keys(errors).length === 0
-  }
-
-  // Handle input change
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value
-    }))
-    // Clear error for this field when user starts typing
-    if (formErrors[name as keyof FormErrors]) {
-      setFormErrors((prev) => ({
-        ...prev,
-        [name]: undefined
-      }))
-    }
-  }
-
-  // Handle form submission
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    if (validateForm()) {
-      // In a real app, you'd send this to a backend or email service
-      console.log('Form submitted:', formData)
-      setIsSubmitted(true)
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      })
-      // Reset success message after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000)
+    if (!validate(e.currentTarget)) {
+      e.preventDefault()
     }
   }
 
   return (
     <div>
-      {/* Success Message */}
-      {isSubmitted && (
-        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-          <p className="text-green-700 font-semibold">
-            ✓ Thank you! We will get back to you soon.
-          </p>
+      {/* Toast */}
+      {toast && (
+        <div className={`fixed top-6 right-6 z-50 flex items-center gap-3 px-5 py-4 rounded-2xl shadow-2xl text-white text-sm font-medium transition-all duration-500 max-w-sm ${
+          toast.success ? 'bg-gradient-to-r from-green-500 to-emerald-600' : 'bg-gradient-to-r from-red-500 to-rose-600'
+        }`}>
+          <div className="shrink-0 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+            {toast.success ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            )}
+          </div>
+          <div className="flex-1">
+            <p className="font-semibold text-sm">{toast.success ? 'Message Sent!' : 'Failed to Send'}</p>
+            <p className="text-white/80 text-xs mt-0.5">{toast.message}</p>
+          </div>
+          <button onClick={() => setToast(null)} className="shrink-0 w-6 h-6 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
         </div>
       )}
 
-      {/* Contact Form */}
-      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
-        {/* Name and Email Row */}
+      <form action={formAction} onSubmit={handleSubmit} noValidate className="space-y-4 sm:space-y-5">
+
+        {/* Name and Email */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-          {/* Full Name */}
           <div>
             <label htmlFor="name" className="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">
               Full Name <span className="text-red-500">*</span>
@@ -120,15 +100,12 @@ const ContactForm: FC = () => {
               type="text"
               id="name"
               name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Enter your full name"
-              className="w-full border border-gray-300 rounded-lg p-2.5 sm:p-3 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all text-sm"
+              placeholder="Enter your full name (min 3 chars)"
+              className={inputClass(errors.name)}
             />
-            {formErrors.name && <p className="text-red-500 text-xs sm:text-sm mt-1">{formErrors.name}</p>}
+            {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
           </div>
 
-          {/* Email Address */}
           <div>
             <label htmlFor="email" className="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">
               Email Address <span className="text-red-500">*</span>
@@ -137,44 +114,43 @@ const ContactForm: FC = () => {
               type="email"
               id="email"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
               placeholder="Enter your email"
-              className="w-full border border-gray-300 rounded-lg p-2.5 sm:p-3 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all text-sm"
+              className={inputClass(errors.email)}
             />
-            {formErrors.email && <p className="text-red-500 text-xs sm:text-sm mt-1">{formErrors.email}</p>}
+            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
           </div>
         </div>
 
-        {/* Phone and Subject Row */}
+        {/* Phone and Subject */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-          {/* Phone Number */}
           <div>
             <label htmlFor="phone" className="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">
-              Phone Number
+              Phone Number <span className="text-red-500">*</span>
             </label>
             <input
               type="tel"
               id="phone"
               name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="Enter your phone number"
-              className="w-full border border-gray-300 rounded-lg p-2.5 sm:p-3 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all text-sm"
+              placeholder="10-digit number only"
+              maxLength={10}
+              onKeyDown={(e) => {
+                if (!/[0-9]/.test(e.key) && !['Backspace','Delete','Tab','ArrowLeft','ArrowRight'].includes(e.key)) {
+                  e.preventDefault()
+                }
+              }}
+              className={inputClass(errors.phone)}
             />
+            {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
           </div>
 
-          {/* Subject */}
           <div>
             <label htmlFor="subject" className="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">
-              Subject
+              Subject <span className="text-red-500">*</span>
             </label>
             <select
               id="subject"
               name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg p-2.5 sm:p-3 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all bg-white text-sm"
+              className={`${inputClass(errors.subject)} bg-white`}
             >
               <option value="">Select a subject</option>
               <option value="General Inquiry">General Inquiry</option>
@@ -184,6 +160,7 @@ const ContactForm: FC = () => {
               <option value="Fee Structure">Fee Structure</option>
               <option value="Other">Other</option>
             </select>
+            {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject}</p>}
           </div>
         </div>
 
@@ -195,21 +172,20 @@ const ContactForm: FC = () => {
           <textarea
             id="message"
             name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Enter your message (minimum 10 characters)"
+            placeholder="Write your message here (min 10 characters)"
             rows={4}
-            className="w-full border border-gray-300 rounded-lg p-2.5 sm:p-3 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all resize-none text-sm"
+            className={inputClass(errors.message) + ' resize-none'}
           />
-          {formErrors.message && <p className="text-red-500 text-xs sm:text-sm mt-1">{formErrors.message}</p>}
+          {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
         </div>
 
-        {/* Submit Button */}
+        {/* Submit */}
         <button
           type="submit"
-          className="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-2.5 sm:py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg text-sm sm:text-base"
+          disabled={pending}
+          className="w-full bg-green-700 hover:bg-green-800 disabled:bg-green-400 disabled:cursor-not-allowed text-white font-bold py-2.5 sm:py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg text-sm sm:text-base"
         >
-          Send Message
+          {pending ? 'Sending...' : 'Send Message'}
         </button>
       </form>
     </div>
