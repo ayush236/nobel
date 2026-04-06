@@ -2,7 +2,7 @@ import { FC } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaFacebook, FaYoutube } from 'react-icons/fa'
-import { Phone, Mail, Clock, MapPin, ArrowRight } from 'lucide-react'
+import { Phone, Mail, Clock, MapPin, ArrowRight, GraduationCap } from 'lucide-react'
 
 const Footer: FC = () => {
   const quickLinks = [
@@ -28,14 +28,16 @@ const Footer: FC = () => {
       {/* Top CTA strip */}
       <div className="bg-gradient-to-r from-green-700 to-green-600">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white font-semibold text-sm sm:text-base">
-            🎓 Admissions Open for 2083 B.S. — Limited seats available!
+          <p className="text-white font-semibold text-sm sm:text-base flex items-center gap-2">
+            <GraduationCap className="w-5 h-5 shrink-0" />
+             Enroll your child in a nature-inspired learning environment that nurtures creativity, critical thinking, and holistic development.
           </p>
           <Link
             href="/contact"
-            className="shrink-0 px-5 py-2 bg-yellow-400 hover:bg-yellow-300 text-green-900 font-bold rounded-lg text-sm transition-all duration-300"
+            className="shrink-0 flex items-center gap-2 px-5 py-2 bg-yellow-400 hover:bg-yellow-300 text-green-900 font-bold rounded-lg text-sm transition-all duration-300"
           >
-            Apply Now →
+            Apply Now
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>
