@@ -13,7 +13,6 @@ export function middleware(request: NextRequest) {
     const session = request.cookies.get('admin_session')?.value
 
     if (!session || session !== process.env.ADMIN_SESSION_SECRET) {
-      // Redirect to login instead of 404 so users can authenticate
       const loginUrl = new URL('/admin/login', request.url)
       return NextResponse.redirect(loginUrl)
     }

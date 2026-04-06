@@ -81,15 +81,14 @@ export async function getGalleryImages() {
       const titleFromContext  = r.context?.custom?.title
       const titleFromTag      = r.tags?.find((t: string) => t.startsWith('title:'))?.replace('title:', '')
       const categoryFromCtx   = r.context?.custom?.category
-      const categoryFromTag   = r.tags?.find((t: string) =>
-        ['academic','sports','events','campus'].includes(t)
-      )
+      const categoryStr = categoryFromCtx
+        ?? (categoryFromTag ? categoryFromTag.charAt(0).toUpperCase() + categoryFromTag.slice(1) : 'Academic')
 
       return {
         url:      r.secure_url,
         publicId: r.public_id,
         title:    titleFromContext || titleFromTag || '',
-        category: ((categoryFromCtx || categoryFromTag?.charAt(0).toUpperCase() + categoryFromTag?.slice(1)) ?? 'Academic') as Category,
+        category: categoryStr as Category,
       }
     }).filter((img: { title: string }) => img.title !== '')
   } catch {
