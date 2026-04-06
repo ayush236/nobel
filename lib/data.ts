@@ -87,7 +87,7 @@ export const programs: Program[] = [
       'Higher Secondary (+2) enrollment',
       'Foundation for engineering, medicine, management and humanities'
     ],
-    image: '/images/secondary.jpg'
+    image: '/images/achievement2.jpg'
   },
   {
     id: 5,
@@ -102,7 +102,7 @@ export const programs: Program[] = [
     objectives: [
       'Complete NEB Grade 11–12 curriculum',
       'Intensive SLC examination preparation',
-      'Science, Math, English, Nepali, Social Studies, Optional Math',
+      'Science, Math, English, Nepali, Social Studies, Computer Science',
       'Practical lab work and project-based learning'
     ],
     career: [
