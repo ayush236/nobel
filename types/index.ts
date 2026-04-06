@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react'
+
 export type Slide = {
   id: number
   heading: string
@@ -10,7 +12,7 @@ export type Slide = {
 
 export type FeatureCard = {
   id: number
-  emoji: string
+  icon: ReactNode
   title: string
   description: string
 }
