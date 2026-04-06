@@ -32,8 +32,8 @@ const OrgStructurePage: FC = () => {
 
       {/* Navigation Tabs */}
       <section className="py-6 px-6 bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto flex flex-wrap gap-4 justify-between">
-          <div>
+        <div className="max-w-7xl mx-auto flex flex-wrap gap-4 justify-between align-middle ">
+          <div className="flex flex-wrap gap-4">
           <Link
             href="/about/introduction"
             className="px-6 py-2 rounded-lg font-medium text-gray-700 hover:bg-green-50 hover:text-green-700 transition"
@@ -42,13 +42,13 @@ const OrgStructurePage: FC = () => {
           </Link>
           <Link
             href="/about/principal"
-            className="px-6 py-2 rounded-lg font-medium text-gray-700 hover:bg-green-50 hover:text-green-700 transition"
+            className=" px-6 py-2 rounded-lg font-medium text-gray-700 hover:bg-green-50 hover:text-green-700 transition"
           >
             Message From Principal
           </Link>
           <Link
             href="/about/org-structure"
-            className="px-6 py-2 rounded-lg font-medium bg-green-700 text-white transition"
+            className=" px-6 py-2 rounded-lg font-medium bg-green-700 text-white transition"
           >
             Org Structure
           </Link>
@@ -61,7 +61,7 @@ const OrgStructurePage: FC = () => {
                     Download Brochure
                   </Link>
                   </div>
-        </div>
+                  </div>
       </section>
 
       {/* Main Content */}
