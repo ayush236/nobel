@@ -74,11 +74,11 @@ const ProgramsSection: FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {programs.map((program) => (
             <div
               key={program.id}
-              className="rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300"
+              className="rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 min-h-80"
               style={{
                 backgroundImage: program.image
                   ? `linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('${program.image}')`
@@ -87,39 +87,37 @@ const ProgramsSection: FC = () => {
                 backgroundPosition: 'center'
               }}
             >
-              <div className="p-6 h-full flex flex-col justify-between relative  ">
-                  {/* Hidden content */}
-
-                <div className='opacity-0 hover:opacity-100 transition duration-300 '>
+              <div className="p-4 sm:p-6 h-full flex flex-col justify-between relative md:opacity-0 md:hover:opacity-100 transition duration-300">
                 {/* Emoji */}
-                <div className="text-5xl mb-4 "><span className='text-green-600'>{program.emoji}</span></div>
+                <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">
+                  <span className="text-green-400">{program.emoji}</span>
+                </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-white mb-2">{program.title}</h3>
+                <h3 className="text-base sm:text-lg font-bold text-white mb-2">{program.title}</h3>
 
                 {/* Description */}
-                <p className="text-gray-100 text-sm mb-4">{program.description}</p>
+                <p className="text-gray-100 text-xs sm:text-sm mb-3 sm:mb-4 flex-grow">{program.description}</p>
 
                 {/* Duration */}
-                <p className="text-sm text-gray-300 mb-4">{program.duration}</p>
+                <p className="text-xs sm:text-sm text-gray-300 mb-3 sm:mb-4">{program.duration}</p>
 
                 {/* Level Badge */}
-                <div className="mb-6">
+                <div className="mb-4 sm:mb-6">
                   <span className="inline-block bg-green-600 text-white text-xs font-semibold rounded-full px-3 py-1">
                     {program.level}
                   </span>
                 </div>
 
                 {/* Apply Now Button */}
-                <div className=' flex justify-center'>
-                <Link
-                  href="/contact"
-                  className="block  w-1/2 text-center px-4 py-3 bg-green-700 hover:bg-green-600 text-white font-bold rounded-lg transition duration-300"
-                >
-                  Apply Now
-                </Link>
+                <div className="flex justify-center">
+                  <Link
+                    href="/contact"
+                    className="block w-full sm:w-2/3 md:w-3/4 text-center px-3 sm:px-4 py-2 sm:py-3 bg-green-700 hover:bg-green-600 text-white text-sm sm:text-base font-bold rounded-lg transition duration-300"
+                  >
+                    Apply Now
+                  </Link>
                 </div>
-              </div>
               </div>
             </div>
           ))}

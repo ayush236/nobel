@@ -197,7 +197,7 @@ const Navbar: FC = () => {
               className="object-contain"
             />
             <span className="text-base font-bold text-green-900 leading-tight hidden sm:block">
-              Nobel Environment Academy
+              Nobel Environment <br />Academy
             </span>
           </Link>
 
