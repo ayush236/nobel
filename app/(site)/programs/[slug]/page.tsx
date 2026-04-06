@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-const ProgramDetailPage: FC<PageProps> = async ({ params }) => {
+const ProgramPage: FC<PageProps> = async ({ params }) => {
   const { slug } = await params
   const program = programs.find((p) => p.slug === slug)
 
@@ -221,4 +221,4 @@ export function generateStaticParams(): Array<{ slug: string }> {
 
 export const revalidate = 3600 // Revalidate every hour (ISR)
 
-export default ProgramDetailPage
+export default ProgramPage

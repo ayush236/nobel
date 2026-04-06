@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { Palette, BookOpen, FlaskConical, GraduationCap } from 'lucide-react'
 import PageBanner from '@/components/PageBanner'
 import { programs } from '@/lib/data'
+import Topbar from '@/components/Topbar'
+import Navbar from '@/components/Navbar'
 
 export const metadata: Metadata = {
   title: 'Academic Programs | Nobel Environment Academy',
@@ -21,6 +23,9 @@ const programIcons: Record<string, React.ReactNode> = {
 
 const ProgramsPage: FC = () => {
   return (
+    <div>
+      <Topbar/>
+      <Navbar/>
     <div className="flex flex-col">
       <PageBanner
         title="Academic Programs"
@@ -28,7 +33,6 @@ const ProgramsPage: FC = () => {
           { label: 'Home', href: '/' },
           { label: 'Programs', href: '/programs' }
         ]}
-        image="/images/programs-banner.jpg"
       />
 
       {/* Programs Grid */}
@@ -125,6 +129,7 @@ const ProgramsPage: FC = () => {
           </Link>
         </div>
       </section>
+    </div>
     </div>
   )
 }
