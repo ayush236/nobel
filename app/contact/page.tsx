@@ -62,27 +62,37 @@ const ContactPage: FC = () => {
                 {
                   icon: <FaLocationDot />,
                   label: "Address",
-                  value: "Tilottama-15, Kotihawa, Rupandehi, Lumbini, Nepal"
+                  value: "Tilottama-15, Kotihawa, Rupandehi, Lumbini, Nepal",
+                  href: "https://www.google.com/maps/place/Nobel+environment+academy,Tilottama-15,+Kotihawa/@27.5663950,83.4715277,17z"
                 },
                 {
                   icon: <FaPhoneAlt />,
                   label: "Phone",
-                  value: "071-514220 / 9857054560"
+                  value: null,
+                  href: null,
+                  phones: [
+                    { display: '071-514220', href: 'tel:071514220' },
+                    { display: '9857054560', href: 'tel:9857054560' },
+                    { display: '9867587241', href: 'tel:9867587241' },
+                  ]
                 },
                 {
                   icon: <MdAttachEmail />,
                   label: "Email",
-                  value: "sundargurung@gmail.com"
+                  value: "sundargurung@gmail.com",
+                  href: "mailto:sundargurung@gmail.com"
                 },
                 {
                   icon: <FaClock />,
                   label: "Office Hours",
-                  value: "Sunday–Friday, 10:00 AM – 4:00 PM"
+                  value: "Sunday–Friday, 10:00 AM – 4:00 PM",
+                  href: null
                 },
                 {
                   icon: <FaBuilding />,
                   label: "Established",
-                  value: "2068 B.S. (2011 A.D.)"
+                  value: "2068 B.S. (2011 A.D.)",
+                  href: null
                 }
               ].map((item, index) => (
                 
@@ -101,9 +111,31 @@ const ContactPage: FC = () => {
                     <p className="text-green-200 text-xs sm:text-sm">
                       {item.label}
                     </p>
-                    <p className="text-white font-medium text-sm sm:text-base leading-snug">
-                      {item.value}
-                    </p>
+                    {'phones' in item && item.phones ? (
+                      <div className="flex flex-row flex-wrap gap-x-2 gap-y-0.5">
+                        {item.phones.map((p, i) => (
+                          <span key={p.href} className="flex items-center gap-2">
+                            <a href={p.href} className="text-white font-medium text-sm sm:text-base leading-snug hover:text-yellow-300 transition-colors duration-200">
+                              {p.display}
+                            </a>
+                            {i < item.phones.length - 1 && <span className="text-white/30">/</span>}
+                          </span>
+                        ))}
+                      </div>
+                    ) : item.href ? (
+                      <a
+                        href={item.href}
+                        target={item.href.startsWith('http') ? '_blank' : undefined}
+                        rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="text-white font-medium text-sm sm:text-base leading-snug hover:text-yellow-300 transition-colors duration-200"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-white font-medium text-sm sm:text-base leading-snug">
+                        {item.value}
+                      </p>
+                    )}
                   </div>
                 </div>
 
