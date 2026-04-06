@@ -127,7 +127,7 @@ const AchievementsPage: FC =()=> {
 
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
               " Good Environment, The Best Eduction & Creative Knowledge "
-              <span className="block text-emerald-400 mt-2">– 2024</span>
+              
             </h2>
 
             <p className="text-slate-200 max-w-xl text-lg leading-relaxed">
