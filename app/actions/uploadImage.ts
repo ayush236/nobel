@@ -81,6 +81,9 @@ export async function getGalleryImages() {
       const titleFromContext  = r.context?.custom?.title
       const titleFromTag      = r.tags?.find((t: string) => t.startsWith('title:'))?.replace('title:', '')
       const categoryFromCtx   = r.context?.custom?.category
+      const categoryFromTag   = r.tags?.find((t: string) =>
+        ['academic', 'sports', 'events', 'campus'].includes(t)
+      )
       const categoryStr = categoryFromCtx
         ?? (categoryFromTag ? categoryFromTag.charAt(0).toUpperCase() + categoryFromTag.slice(1) : 'Academic')
 
@@ -96,13 +99,12 @@ export async function getGalleryImages() {
   }
 }
 
-export async function deleteGalleryImage(publicId: string): Promise<UploadState> {
+export async function deleteGalleryImage(publicId: string): Promise<void> {
   try {
     await cloudinary.uploader.destroy(publicId)
     revalidatePath('/gallery')
     revalidatePath('/admin/gallery')
-    return { success: true, message: 'Image deleted.' }
   } catch {
-    return { success: false, message: 'Delete failed.' }
+    // silently fail
   }
 }
