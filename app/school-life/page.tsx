@@ -1,6 +1,7 @@
 'use client';
 
 import PageBanner from "@/components/PageBanner";
+import SchoolLifeImageSlider from "@/components/SchoolLifeImageSlider";
 import { Camera, Music, Trophy, Users, BookOpen, Coffee } from "lucide-react";
 import Image from "next/image";
 
@@ -41,7 +42,7 @@ export default function SchoolLifePage() {
 
   return (
     <main className="min-h-screen bg-white overflow-hidden">
-        <PageBanner title="School Life" breadcrumbs={breadcrumbs} image="/images/school-life.jpg" />
+        <PageBanner title="School Life" breadcrumbs={breadcrumbs} image="/images/schoollife2.jpg" />
 
       
       
@@ -117,12 +118,7 @@ export default function SchoolLifePage() {
 
           {/* IMAGE SIDE (Next.js optimized) */}
           <div className="lg:w-1/2 relative min-h-[300px]">
-            <Image
-              src="/images/school-life.jpg"  // put your image in public/images/
-              alt="Student Life"
-              fill
-              className="object-cover"
-            />
+            <SchoolLifeImageSlider />
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/30"></div>
