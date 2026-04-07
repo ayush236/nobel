@@ -52,7 +52,7 @@ export async function uploadGalleryImage(
     })
 
     revalidatePath('/gallery')
-    revalidatePath('/admin/gallery')
+    revalidatePath('/nea-secure-2068/dashboard/gallery')
 
     return { success: true, message: 'Image uploaded successfully!' }
   } catch (err) {
@@ -103,7 +103,7 @@ export async function deleteGalleryImage(publicId: string): Promise<void> {
   try {
     await cloudinary.uploader.destroy(publicId)
     revalidatePath('/gallery')
-    revalidatePath('/admin/gallery')
+    revalidatePath('/nea-secure-2068/dashboard/gallery')
   } catch {
     // silently fail
   }

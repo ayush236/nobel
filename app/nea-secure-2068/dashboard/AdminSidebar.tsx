@@ -7,7 +7,7 @@ import { Images, LogOut, Menu, X } from 'lucide-react'
 import { adminLogout } from '@/app/actions/adminAuth'
 
 const navItems = [
-  { label: 'Gallery', href: '/admin/gallery', icon: Images },
+  { label: 'Gallery', href: '/nea-secure-2068/dashboard/gallery', icon: Images },
 ]
 
 export default function AdminSidebar() {

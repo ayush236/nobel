@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Image from 'next/image'
 import { adminLogin } from '@/app/actions/adminAuth'
-import LoginForm from '@/app/admin/login/LoginForm'
+import LoginForm from '@/app/nea-secure-2068/admin-portal/LoginForm'
 
 const AdminLoginPage: FC = () => {
   return (

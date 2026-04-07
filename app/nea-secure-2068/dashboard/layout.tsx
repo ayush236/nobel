@@ -1,13 +1,13 @@
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
-import AdminSidebar from '@/app/admin/(dashboard)/AdminSidebar'
+import AdminSidebar from '@/app/nea-secure-2068/dashboard/AdminSidebar'
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const cookieStore = await cookies()
   const session = cookieStore.get('admin_session')?.value
 
   if (!session || session !== process.env.ADMIN_SESSION_SECRET) {
-    redirect('/admin/login')
+    redirect('/nea-secure-2068/admin-portal')
   }
 
   return (

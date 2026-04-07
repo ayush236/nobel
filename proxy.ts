@@ -4,16 +4,16 @@ export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // Allow login page through always
-  if (pathname === '/admin/login') {
+  if (pathname === '/nea-secure-2068/admin-portal') {
     return NextResponse.next()
   }
 
-  // Protect all other /admin routes
-  if (pathname.startsWith('/admin')) {
+  // Protect all other secure routes
+  if (pathname.startsWith('/nea-secure-2068/dashboard')) {
     const session = request.cookies.get('admin_session')?.value
 
     if (!session || session !== process.env.ADMIN_SESSION_SECRET) {
-      const loginUrl = new URL('/admin/login', request.url)
+      const loginUrl = new URL('/nea-secure-2068/admin-portal', request.url)
       return NextResponse.redirect(loginUrl)
     }
   }
@@ -22,5 +22,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin', '/admin/:path*'],
+  matcher: ['/nea-secure-2068/dashboard', '/nea-secure-2068/dashboard/:path*'],
 }

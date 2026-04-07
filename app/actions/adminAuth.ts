@@ -23,11 +23,11 @@ export async function adminLogin(_prevState: { error: string }, formData: FormDa
     path: '/',
   })
 
-  redirect('/admin/gallery')
+  redirect('/nea-secure-2068/dashboard/gallery')
 }
 
 export async function adminLogout() {
   const cookieStore = await cookies()
   cookieStore.delete('admin_session')
-  redirect('/admin/login')
+  redirect('/nea-secure-2068/admin-portal')
 }
