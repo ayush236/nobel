@@ -29,7 +29,7 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
   }
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 min-w-0">
       {images.map((img) => (
         <div key={img.publicId} className="group relative bg-gray-50 rounded-xl overflow-hidden border border-gray-100">
           <div className="relative h-36">
