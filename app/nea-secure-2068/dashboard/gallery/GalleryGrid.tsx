@@ -44,11 +44,11 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
           {/* Delete button */}
           <form
             action={deleteGalleryImage.bind(null, img.publicId)}
-            className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute top-2 right-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity"
           >
             <button
               type="submit"
-              className="w-8 h-8 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center shadow-lg"
+              className="w-10 h-10 lg:w-8 lg:h-8 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center shadow-lg"
               aria-label="Delete image"
             >
               <Trash2 className="w-3.5 h-3.5" />
