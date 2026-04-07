@@ -11,7 +11,7 @@ const AdminLoginPage: FC = () => {
         {/* Logo / Brand */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <img src= "../public/logo.png" alt="Logo" width={32} height={32} />
+          <img src="/logo.png"/>
           </div>
           <h1 className="text-white text-xl font-bold">Nobel Environment Academy</h1>
           <p className="text-green-300 text-sm mt-1">Admin Portal</p>
