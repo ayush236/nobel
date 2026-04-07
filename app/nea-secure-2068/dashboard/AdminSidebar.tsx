@@ -56,14 +56,14 @@ export default function AdminSidebar() {
       {/* Sidebar */}
       <aside
         ref={sidebarRef}
-        className={`fixed md:static top-0 left-0 h-screen w-60 shrink-0 bg-green-950 text-white flex flex-col min-h-screen z-40 transition-transform duration-300 md:translate-x-0 ${
+        className={`fixed md:static top-0 left-0 h-full w-60 shrink-0 bg-green-950 text-white flex flex-col min-h-screen z-40 transition-transform duration-300 md:translate-x-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="px-6 py-6 border-b border-white/10 mt-16 flex flex-col items-start gap-1">
-          <p className="font-bold text-sm leading-tight">Nobel Environment</p>
-          <p className="text-green-400 text-xs">Admin Portal</p>
-        </div>
+    <p className="font-bold text-sm leading-tight">Nobel Environment</p>
+    <p className="text-green-400 text-xs">Admin Portal</p>
+  </div>
         <nav className="flex-1 px-3 py-4 space-y-1">
           {navItems.map(({ label, href, icon: Icon }) => {
             const active = pathname === href
