@@ -11,7 +11,7 @@ const StatsCounter: FC = () => {
     { id: 1, value: 215, suffix: '+', label: 'Students' },
     { id: 2, value: 13, suffix: '+', label: 'Years of Excellence' },
     { id: 3, value: 12, suffix: '', label: 'Grades (1–12)' },
-    { id: 4, value: 4, suffix: '', label: 'Levels of Education' },
+    { id: 4, value: 5, suffix: '', label: 'Levels of Education' },
     { id: 5, value: 30, suffix: '+', label: 'Faculty Members' },
     { id: 6, value: 500, suffix: '+', label: 'Graduates' }
   ]
