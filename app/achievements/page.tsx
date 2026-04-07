@@ -4,6 +4,8 @@ import PageBanner from "@/components/PageBanner";
 import Image from "next/image";
 import { Trophy, Star, Medal, Award, Zap, Target, Lightbulb } from "lucide-react";
 import React, { FC } from 'react'
+import Topbar from "@/components/Topbar";
+import Navbar from "@/components/Navbar";
 
 
 const AchievementsPage: FC =()=> {
@@ -66,6 +68,9 @@ const AchievementsPage: FC =()=> {
 
   return (
     <main className="min-h-screen  text-green-900 overflow-hidden">
+      <Topbar/>
+       <Navbar/>
+
 
       <PageBanner
         title="Achievements"

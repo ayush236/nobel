@@ -1,7 +1,9 @@
 'use client';
 
+import Navbar from "@/components/Navbar";
 import PageBanner from "@/components/PageBanner";
 import SchoolLifeImageSlider from "@/components/SchoolLifeImageSlider";
+import Topbar from "@/components/Topbar";
 import { Camera, Music, Trophy, Users, BookOpen, Coffee } from "lucide-react";
 import Image from "next/image";
 
@@ -42,6 +44,8 @@ export default function SchoolLifePage() {
 
   return (
     <main className="min-h-screen bg-white overflow-hidden">
+      <Topbar/>
+      <Navbar/>
         <PageBanner title="School Life" breadcrumbs={breadcrumbs} image="/images/schoollife2.jpg" />
 
       

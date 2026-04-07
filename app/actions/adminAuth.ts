@@ -23,7 +23,7 @@ export async function adminLogin(_prevState: { error: string }, formData: FormDa
     path: '/',
   })
 
-  redirect('/admin')
+  redirect('/admin/gallery')
 }
 
 export async function adminLogout() {

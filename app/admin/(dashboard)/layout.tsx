@@ -11,9 +11,9 @@ export default async function DashboardLayout({ children }: { children: React.Re
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50 md:flex">
       <AdminSidebar />
-      <main className="flex-1 p-6 sm:p-8 overflow-auto">
+      <main className="flex-1 p-6 sm:p-8 overflow-auto md:pt-6 pt-20">
         {children}
       </main>
     </div>
