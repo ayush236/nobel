@@ -60,10 +60,18 @@ export default function AdminSidebar() {
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        <div className="px-6 py-6 border-b border-white/10 mt-16 flex flex-col items-start gap-1">
-    <p className="font-bold text-sm leading-tight">Nobel Environment</p>
-    <p className="text-green-400 text-xs">Admin Portal</p>
-  </div>
+        {/* Logo Section */}
+        <div className="px-6 py-6 border-b border-white/10 mt-16 md:mt-0 flex items-center gap-3">
+          <img 
+            src="/logo.png" 
+            alt="Nobel Environment Academy" 
+            className="w-12 h-12 object-contain"
+          />
+          <div className="flex flex-col items-start gap-1">
+            <p className="font-bold text-sm leading-tight">Nobel Environment</p>
+            <p className="text-green-400 text-xs">Admin Portal</p>
+          </div>
+        </div>
         <nav className="flex-1 px-3 py-4 space-y-1">
           {navItems.map(({ label, href, icon: Icon }) => {
             const active = pathname === href
