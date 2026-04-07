@@ -15,7 +15,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
       <div className='fixed'>
       <AdminSidebar />
       </div>
-      <div className="flex flex-col flex-1 md:pl-64">
+      <div className="flex flex-col flex-1 md:pl-64 min-w-0">
       <main className="flex-1 relative overflow-y-auto focus:outline-none p-6 sm:p-8 pt-20 md:pt-8">
         {children}
       </main>
