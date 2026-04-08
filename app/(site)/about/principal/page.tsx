@@ -102,7 +102,9 @@ const PrincipalPage: FC = () => {
               {/* Principal Info Card */}
               <div className="sticky top-24 bg-green-50 border-2 border-green-200 rounded-2xl p-6 mb-6 h-auto">
 
-                <div className="bg-gray-300  h-96 rounded-lg mx-auto "></div>
+                <div className="bg-gray-300  h-fit rounded-lg mx-auto ">
+                  <img src="/prin.jpg"  />
+                </div>
 
               </div>
             </div>
