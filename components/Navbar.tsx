@@ -19,7 +19,7 @@ const navItems: NavItem[] = [
   { label: 'HOME', href: '/' },
   {
     label: 'ABOUT',
-    href: '/about',
+    href: '/about/introduction',
     dropdown: [
       { label: 'Introduction', href: '/about/introduction' },
       { label: 'Message From Principal', href: '/about/principal' },
