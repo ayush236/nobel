@@ -96,7 +96,7 @@ const ProgramsPage: FC = () => {
                     {/* Image */}
                     <div className="relative h-52 sm:h-full min-h-[200px] overflow-hidden">
                       <Image
-                        src={program.image}
+                        src={program.image ?? '/images/homea.jpg'}
                         alt={program.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
