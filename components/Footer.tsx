@@ -114,9 +114,12 @@ const Footer: FC = () => {
                 <a href="tel:9867587241" className="hover:text-yellow-400 transition-colors">9867587241</a>
               </div>
             </li>
-            <li className="flex items-center gap-3 text-white/80 text-sm">
-              <Mail className="w-4 h-4 text-white shrink-0" />
-              <a href="mailto:nobelacademy68@gmail.com" className="hover:text-yellow-400 transition-colors">nobelacademy68@gmail.com</a>
+            <li className="flex items-start gap-3 text-white/80 text-sm">
+              <Mail className="w-4 h-4 text-white shrink-0 mt-0.5" />
+              <div className="flex flex-col gap-0.5">
+               
+                <a href="mailto:sundargurung@gmail.com" className="hover:text-yellow-400 transition-colors">sundargurung@gmail.com</a>
+              </div>
             </li>
             <li className="flex items-center gap-3 text-white/80 text-sm">
               <Clock className="w-4 h-4 text-white shrink-0" />
