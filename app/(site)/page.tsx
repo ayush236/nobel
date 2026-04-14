@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Nobel Environment Academy | Quality Education in Kotihawa',
     description: 'Montessori and secondary school offering quality education from pre-school to Grade 10 in Kotihawa, Rupandehi, Nepal.',
-    url: 'https://nobelacademy.edu.np',
+    url: 'https://nobelenvironmentacademy.edu.np',
     siteName: 'Nobel Environment Academy',
     locale: 'en_US',
     type: 'website',

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact Nobel Environment Academy',
     description: 'Visit or contact us at Tilottama-15, Kotihawa, Rupandehi, Nepal. Office hours: Sunday-Friday, 10 AM - 4 PM.',
-    url: 'https://nobelacademy.edu.np/contact',
+    url: 'https://nobelenvironmentacademy.edu.np/contact',
   },
 }
 

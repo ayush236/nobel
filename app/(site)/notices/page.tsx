@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Notice Board - Nobel Environment Academy',
     description: 'Latest notices and announcements from Nobel Environment Academy.',
-    url: 'https://nobelacademy.edu.np/notices',
+    url: 'https://nobelenvironmentacademy.edu.np/notices',
   },
 }
 

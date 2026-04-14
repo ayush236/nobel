@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nobelacademy.edu.np'),
+  metadataBase: new URL('https://nobelenvironmentacademy.edu.np'),
   verification: {
     google: "-Tpbor083mZ32WeUusb6pJFswmlgZNM10QMllkyWY4A",
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://nobelacademy.edu.np',
+    url: 'https://nobelenvironmentacademy.edu.np',
     siteName: 'Nobel Environment Academy',
     title: 'Nobel Environment Academy | Quality Education in Kotihawa',
     description: 'Montessori and secondary school offering quality education from pre-school to Grade 10 in Kotihawa, Rupandehi, Nepal.',
@@ -69,8 +69,8 @@ export default function RootLayout({
     '@type': 'EducationalOrganization',
     name: 'Nobel Environment Academy',
     alternateName: 'Nobel Academy',
-    url: 'https://nobelacademy.edu.np',
-    logo: 'https://nobelacademy.edu.np/logo.png',
+    url: 'https://nobelenvironmentacademy.edu.np',
+    logo: 'https://nobelenvironmentacademy.edu.np/logo.png',
     description: 'Montessori and secondary school in Kotihawa, Rupandehi, Nepal offering quality education from pre-school to Grade 10.',
     address: {
       '@type': 'PostalAddress',

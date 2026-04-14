@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Photo Gallery - Nobel Environment Academy',
     description: 'View photos from our school events, cultural programs, and daily activities.',
-    url: 'https://nobelacademy.edu.np/gallery',
+    url: 'https://nobelenvironmentacademy.edu.np/gallery',
   },
 }
 

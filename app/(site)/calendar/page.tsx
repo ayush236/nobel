@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Academic Calendar 2083 - Nobel Environment Academy',
     description: 'View upcoming events, examinations, and festivals for the academic year.',
-    url: 'https://nobelacademy.edu.np/calendar',
+    url: 'https://nobelenvironmentacademy.edu.np/calendar',
   },
 }
 

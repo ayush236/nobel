@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Nobel Environment Academy',
     description: 'Private Montessori and secondary school in Kotihawa, Rupandehi offering quality education since 2068 B.S.',
-    url: 'https://nobelacademy.edu.np/about',
+    url: 'https://nobelenvironmentacademy.edu.np/about',
   },
 }
 

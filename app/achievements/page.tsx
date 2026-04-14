@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Achievements - Nobel Environment Academy',
     description: 'Excellence recognized through dedication, innovation, and outstanding performance.',
-    url: 'https://nobelacademy.edu.np/achievements',
+    url: 'https://nobelenvironmentacademy.edu.np/achievements',
   },
 }
 

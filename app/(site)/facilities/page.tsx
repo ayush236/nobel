@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'School Facilities - Nobel Environment Academy',
     description: 'Modern infrastructure supporting academic excellence and holistic development.',
-    url: 'https://nobelacademy.edu.np/facilities',
+    url: 'https://nobelenvironmentacademy.edu.np/facilities',
   },
 }
 
