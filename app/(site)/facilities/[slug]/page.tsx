@@ -78,7 +78,7 @@ const FacilityDetailPage: FC<PageProps> = async ({ params }) => {
 
             {/* Hero image */}
             <div className="relative rounded-2xl overflow-hidden aspect-[16/7]">
-              <Image src={image} alt={facility.title} fill className="object-cover" />
+              <Image src={image} alt={facility.title} fill sizes="(max-width: 768px) 100vw, 1200px" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               <div className="absolute bottom-5 left-5 flex items-center gap-3">
                 <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center text-white shadow-lg`}>

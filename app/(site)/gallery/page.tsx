@@ -1,9 +1,21 @@
+import type { Metadata } from 'next'
 import PageBanner from '@/components/PageBanner'
 import Footer from '@/components/Footer'
 import { getGalleryImages } from '@/app/actions/uploadImage'
 import { galleryImages as staticImages } from '@/lib/data'
 import GalleryClient from './GalleryClient'
 import type { Category } from '@/app/actions/uploadImage'
+
+export const metadata: Metadata = {
+  title: 'Photo Gallery | Nobel Environment Academy',
+  description: 'Browse photos from school events, cultural programs, sports activities, and daily life at Nobel Environment Academy, Kotihawa.',
+  keywords: ['school gallery', 'school events', 'cultural programs', 'sports activities', 'school photos'],
+  openGraph: {
+    title: 'Photo Gallery - Nobel Environment Academy',
+    description: 'View photos from our school events, cultural programs, and daily activities.',
+    url: 'https://nobelacademy.edu.np/gallery',
+  },
+}
 
 export const revalidate = 60
 

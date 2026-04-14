@@ -99,6 +99,7 @@ const ProgramsPage: FC = () => {
                         src={program.image ?? '/images/homea.jpg'}
                         alt={program.title}
                         fill
+                        sizes="(max-width: 640px) 100vw, 320px"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />

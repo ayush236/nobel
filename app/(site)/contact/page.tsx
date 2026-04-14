@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import type { Metadata } from 'next'
 import LocationMap from '@/components/LocationMap'
 import PageBanner from '@/components/PageBanner'
 import ContactForm from '@/components/ContactForm'
@@ -7,8 +8,16 @@ import { FaLocationDot, FaBuilding  } from "react-icons/fa6";
 import { FaPhoneAlt, FaClock } from "react-icons/fa";
 import { MdAttachEmail } from "react-icons/md";
 
-
-
+export const metadata: Metadata = {
+  title: 'Contact Us | Nobel Environment Academy',
+  description: 'Get in touch with Nobel Environment Academy. Located at Tilottama-15, Kotihawa, Rupandehi. Phone: 071-514220, 9857054560. Email: sundargurung@gmail.com',
+  keywords: ['contact Nobel Academy', 'school address Kotihawa', 'admission inquiry', 'school phone number'],
+  openGraph: {
+    title: 'Contact Nobel Environment Academy',
+    description: 'Visit or contact us at Tilottama-15, Kotihawa, Rupandehi, Nepal. Office hours: Sunday-Friday, 10 AM - 4 PM.',
+    url: 'https://nobelacademy.edu.np/contact',
+  },
+}
 
 const ContactPage: FC = () => {
   const breadcrumbs = [

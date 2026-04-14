@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import PageBanner from '@/components/PageBanner'
@@ -8,6 +9,17 @@ import {
   BookOpen, FlaskConical, Trophy, Bus, UtensilsCrossed,
   Building2, ArrowRight, CheckCircle
 } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'School Facilities | Nobel Environment Academy',
+  description: 'Explore our modern facilities including library, science labs, sports grounds, transportation, cafeteria, and more at Nobel Environment Academy.',
+  keywords: ['school facilities', 'library', 'science lab', 'sports ground', 'school bus', 'cafeteria', 'school infrastructure'],
+  openGraph: {
+    title: 'School Facilities - Nobel Environment Academy',
+    description: 'Modern infrastructure supporting academic excellence and holistic development.',
+    url: 'https://nobelacademy.edu.np/facilities',
+  },
+}
 
 const facilityIcons: Record<string, React.ReactNode> = {
   library:        <BookOpen className="w-6 h-6" />,
@@ -75,6 +87,7 @@ const FacilitiesPage: FC = () => {
                       src={img}
                       alt={facility.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />

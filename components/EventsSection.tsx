@@ -42,6 +42,7 @@ const EventsSection: FC = () => {
                     src={event.image}
                     alt={event.title}
                     fill
+                    sizes="(max-width: 768px) 288px, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover"
                   />
                 )}

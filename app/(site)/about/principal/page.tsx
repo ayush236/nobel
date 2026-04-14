@@ -97,7 +97,7 @@ const PrincipalPage: FC = () => {
           {/* Signature */}
           <div className="flex items-center gap-4 pt-6 border-t border-gray-100 mb-10">
             <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 ring-2 ring-green-100">
-              <Image src="/prin.jpg" alt="Sundar Gurung" fill className="object-cover object-top" />
+              <Image src="/prin.jpg" alt="Sundar Gurung" fill sizes="48px" className="object-cover object-top" />
             </div>
             <div>
               <p className="font-bold text-green-900">Sundar Gurung</p>
@@ -129,6 +129,7 @@ const PrincipalPage: FC = () => {
             src="/prin.jpg"
             alt="Sundar Gurung — Principal"
             fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover object-top"
             priority
           />

@@ -3,10 +3,18 @@ import Link from 'next/link'
 import Image from 'next/image'
 import PageBanner from '@/components/PageBanner'
 import Footer from '@/components/Footer'
+import type { Metadata } from 'next'
 import {
   MapPin, Phone, Mail, GraduationCap, Users, Calendar, Award,
   Leaf, BookOpen, Trophy, ArrowRight, CheckCircle, Download
 } from 'lucide-react'
+
+export const metadata: Metadata = {
+  
+  title: 'Nobel Environment Academy | Tilottama-15, Kotihawa, Nepal',
+  description:
+    'Montessori and secondary school in Kotihawa, Rupandehi, Nepal. Quality education from pre-school to Grade 10.'
+}
 
 const stats = [
   { icon: Calendar, label: 'Established', value: '2068 B.S.', sub: '2011 A.D.' },
@@ -133,6 +141,7 @@ const IntroductionPage: FC = () => {
                   src="/images/school1.jpg"
                   alt="Nobel Environment Academy campus"
                   fill
+                  sizes="(max-width: 768px) 100vw, 1200px"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-green-900/60 to-transparent" />

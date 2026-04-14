@@ -1,9 +1,21 @@
 import React, { FC } from 'react'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import PageBanner from '@/components/PageBanner'
 import NoticeFilter from '@/components/NoticeFilter'
 import Footer from '@/components/Footer'
 import { notices } from '@/lib/data'
+
+export const metadata: Metadata = {
+  title: 'Notice Board | Nobel Environment Academy',
+  description: 'Stay updated with latest notices, announcements, admission information, examination schedules, and events at Nobel Environment Academy.',
+  keywords: ['school notices', 'announcements', 'admission notice', 'examination schedule', 'school events', 'important updates'],
+  openGraph: {
+    title: 'Notice Board - Nobel Environment Academy',
+    description: 'Latest notices and announcements from Nobel Environment Academy.',
+    url: 'https://nobelacademy.edu.np/notices',
+  },
+}
 
 const NoticesPage: FC = () => {
   const breadcrumbs = [

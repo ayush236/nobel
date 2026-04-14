@@ -113,13 +113,13 @@ const HeroSlider: FC = () => {
             src={slide.bgImage!}
             alt={slide.heading}
             fill
+            sizes="100vw"
             priority={i === 0}
             className="object-cover object-center scale-105"
             style={{
               transform: i === current ? 'scale(1.05)' : 'scale(1)',
               transition: 'transform 6s ease-out',
             }}
-            sizes="100vw"
           />
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
