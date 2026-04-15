@@ -249,121 +249,126 @@ const InteractiveCalendar: FC = () => {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto my-4 sm:my-8 bg-white shadow-2xl rounded-3xl overflow-hidden ring-1 ring-gray-200">
-      
-      {/* --- TOP BRANDING --- */}
-      <div className="bg-white border-b p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center text-white font-bold">NEA</div>
-          <div>
-            <h1 className="text-xl font-black text-green-800 leading-none">NOBEL ENVIRONMENT ACADEMY</h1>
-            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">Tilottama-15, Rupandehi | Estd. 2068</p>
-          </div>
-        </div>
-        <div className="hidden md:block text-right">
-          <p className="text-sm font-bold text-red-600">"Good Environment. The Best Education"</p>
-        </div>
+    <div className="w-full max-w-6xl mx-auto my-0 sm:my-8 bg-white shadow-2xl rounded-none sm:rounded-3xl overflow-hidden ring-1 ring-gray-200">
+  
+  {/* --- TOP BRANDING --- */}
+  
+
+  {/* --- NAVIGATION & MONTH PICKER --- */}
+  <div className="bg-gradient-to-r from-green-800 to-green-900 p-4 sm:p-6 text-white text-center">
+    <div className="flex justify-between items-center max-w-md mx-auto">
+      <button onClick={() => setCurrentIdx(prev => prev === 0 ? 11 : prev - 1)} className="p-1 hover:bg-white/20 rounded-full transition-colors"><ChevronLeft size={28}/></button>
+      <div>
+         <h2 className="text-2xl sm:text-3xl font-bold">{currentMonth.monthNameNe} <span className="text-green-300">२०८३</span></h2>
+         <p className="text-[10px] sm:text-xs font-medium tracking-widest opacity-80 uppercase">{currentMonth.monthNameEn}</p>
       </div>
+      <button onClick={() => setCurrentIdx(prev => prev === 11 ? 0 : prev + 1)} className="p-1 hover:bg-white/20 rounded-full transition-colors"><ChevronRight size={28}/></button>
+    </div>
+  </div>
 
-      {/* --- NAVIGATION & MONTH PICKER --- */}
-      <div className="bg-gradient-to-r from-green-800 to-green-900 p-6 text-white text-center relative">
-        <div className="flex justify-between items-center max-w-md mx-auto">
-          <button onClick={() => setCurrentIdx(prev => prev === 0 ? 11 : prev - 1)} className="p-2 hover:bg-white/20 rounded-full transition-colors"><ChevronLeft size={32}/></button>
-          <div>
-             <h2 className="text-3xl font-bold">{currentMonth.monthNameNe} <span className="text-green-300">२०८३</span></h2>
-             <p className="text-xs font-medium tracking-widest opacity-80 uppercase">{currentMonth.monthNameEn}</p>
+  {/* --- MAIN CONTENT AREA --- */}
+  <div className="p-2 sm:p-4 bg-gray-50 grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
+    
+    {/* --- CALENDAR GRID (Left 8-9 cols) --- */}
+    <div className="lg:col-span-8 xl:col-span-9 bg-white p-1 sm:p-2 rounded-xl sm:rounded-2xl shadow-inner border border-gray-200">
+      <div className="grid grid-cols-7 gap-1 sm:gap-2">
+        {weekDays.map((day, i) => (
+          <div key={day} className={`py-2 text-center text-[10px] sm:text-xs font-black uppercase ${i === 6 ? 'text-red-500' : 'text-green-800'}`}>
+            {day}
           </div>
-          <button onClick={() => setCurrentIdx(prev => prev === 11 ? 0 : prev + 1)} className="p-2 hover:bg-white/20 rounded-full transition-colors"><ChevronRight size={32}/></button>
-        </div>
-      </div>
+        ))}
 
-      <div className="p-2 sm:p-4 bg-gray-50 grid grid-cols-1 lg:grid-cols-12 gap-6">
-        
-        {/* --- CALENDAR GRID (Left 9 cols) --- */}
-        <div className="lg:col-span-8 bg-white p-2 rounded-2xl shadow-inner border border-gray-200">
-          <div className="grid grid-cols-7 gap-1">
-            {weekDays.map((day, i) => (
-              <div key={day} className={`py-3 text-center text-xs font-black uppercase ${i === 6 ? 'text-red-500' : 'text-green-800'}`}>
-                {day}
-              </div>
-            ))}
+        {Array(currentMonth.startingDayOfWeek).fill(null).map((_, i) => (
+          <div key={`blank-${i}`} className="aspect-square bg-gray-50/50 rounded-lg" />
+        ))}
 
-            {Array(currentMonth.startingDayOfWeek).fill(null).map((_, i) => (
-              <div key={`blank-${i}`} className="aspect-square sm:h-24 bg-gray-50/50 rounded-lg" />
-            ))}
-
-            {Array.from({ length: currentMonth.daysInMonth }).map((_, i) => {
-              const dayNum = i + 1;
-              const special = currentMonth.specialDates.find(d => d.dayBS === dayNum);
-              const isSaturday = (dayNum + currentMonth.startingDayOfWeek) % 7 === 0;
-              
-              return (
-                <div key={dayNum} className={`
-                  relative aspect-square sm:h-28 rounded-xl border flex flex-col items-center justify-center transition-all group cursor-pointer
-                  ${special ? getEventStyles(special.type) : (isSaturday ? "bg-red-50 border-red-100" : "bg-white border-gray-100 hover:border-green-500")}
-                `}>
-                  <span className={`text-xl sm:text-3xl font-black ${!special && isSaturday ? "text-red-600" : ""}`}>
-                    {toNepaliNumeral(dayNum)}
-                  </span>
-                  <span className="absolute top-1 right-1.5 text-[10px] opacity-60 font-bold">{dayNum + 13}</span>
-                  
-                  {special && (
-                    <span className="absolute bottom-1 px-1 text-[8px] sm:text-[10px] font-bold text-center leading-tight line-clamp-1 uppercase">
-                      {special.eventText}
-                    </span>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* --- PROGRAMMES & LEGEND (Right 4 cols) --- */}
-        <div className="lg:col-span-4 space-y-4">
+        {Array.from({ length: currentMonth.daysInMonth }).map((_, i) => {
+          const dayNum = i + 1;
+          const special = currentMonth.specialDates.find(d => d.dayBS === dayNum);
+          const isSaturday = (dayNum + currentMonth.startingDayOfWeek) % 7 === 0;
           
-          {/* Legend */}
-          <div className="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm">
-            <h4 className="text-xs font-bold text-gray-400 mb-3 uppercase flex items-center gap-2">
-              <Bell size={14} className="text-green-600"/> Color Key
-            </h4>
-            <div className="grid grid-cols-2 gap-2">
-               <div className="flex items-center gap-2 text-[10px] font-bold"><span className="w-3 h-3 bg-red-600 rounded-sm"/> HOLIDAY</div>
-               <div className="flex items-center gap-2 text-[10px] font-bold"><span className="w-3 h-3 bg-blue-600 rounded-sm"/> VACATION</div>
-               <div className="flex items-center gap-2 text-[10px] font-bold"><span className="w-3 h-3 bg-green-600 rounded-sm"/> ACTIVITY</div>
-               <div className="flex items-center gap-2 text-[10px] font-bold"><span className="w-3 h-3 bg-orange-500 rounded-sm"/> EXAMINATION</div>
-               <div className="flex items-center gap-2 text-[10px] font-bold"><span className="w-3 h-3 bg-pink-500 rounded-sm"/> EXAM-PREPARATION</div>
+          return (
+            <div 
+              key={dayNum} 
+              className={`
+                relative aspect-square w-full rounded-lg sm:rounded-xl border flex flex-col items-center justify-between p-1 transition-all group cursor-pointer
+                ${special 
+                  ? `${getEventStyles(special.type)} text-white shadow-sm ring-1 ring-inset ring-black/5` 
+                  : isSaturday 
+                    ? "bg-red-600 border-red-700 text-white shadow-sm" 
+                    : "bg-white border-gray-100 text-gray-800 hover:border-green-500 hover:shadow-md"
+                }
+              `}
+            >
+              {/* English Date */}
+              <div className="w-full flex justify-end">
+                <span className={`text-[8px] sm:text-[10px] font-bold ${!special && !isSaturday ? "text-gray-400" : "text-white/70"}`}>
+                  {dayNum + 13}
+                </span>
+              </div>
 
-
+              {/* Centered Nepali Date */}
+              <div className="flex-grow flex items-center justify-center">
+                <span className="text-xl sm:text-4xl font-black leading-none drop-shadow-sm">
+                  {toNepaliNumeral(dayNum)}
+                </span>
+              </div>
+              
+              {/* Event Text Area (Fixed height prevents hidden text) */}
+              <div className="w-full min-h-[12px] sm:min-h-[18px] flex items-end justify-center">
+                {special && (
+                  <span className="text-[6px] sm:text-[9px] font-bold text-center leading-tight line-clamp-1 sm:line-clamp-2 uppercase break-words bg-black/10 rounded px-0.5 w-full">
+                    {special.eventText}
+                  </span>
+                )}
+              </div>
             </div>
-          </div>
-
-          {/* School Events */}
-          <div className="bg-green-50 p-5 rounded-2xl border border-green-100">
-            <div className="flex items-center gap-2 mb-4">
-              <School className="text-green-700" size={20}/>
-              <h3 className="font-black text-green-900 uppercase text-sm tracking-tighter">School Activities</h3>
-            </div>
-            <ul className="space-y-3">
-              {currentMonth.schoolProgrammes.map((p, i) => (
-                <li key={i} className="text-xs font-bold text-green-800 flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-1 shrink-0"/> {p}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-         
-
-        </div>
-      </div>
-
-      {/* --- FOOTER MOTTO --- */}
-      <div className="bg-green-900 py-4 px-6 text-center">
-        <p className="text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase opacity-80">
-          "Good Environment, Best Education & Creative Knowledge"
-        </p>
+          );
+        })}
       </div>
     </div>
+
+    {/* --- PROGRAMMES & LEGEND (Right 4 cols) --- */}
+    <div className="lg:col-span-4 xl:col-span-3 space-y-4">
+      
+      {/* Legend - Grid layout on mobile, stack on desktop */}
+      <div className="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm">
+        <h4 className="text-xs font-bold text-gray-400 mb-3 uppercase flex items-center gap-2">
+          <Bell size={14} className="text-green-600"/> Color Key
+        </h4>
+        <div className="grid grid-cols-2 lg:grid-cols-1 gap-2">
+           <div className="flex items-center gap-2 text-[10px] font-bold"><span className="w-3 h-3 bg-red-600 rounded-sm shrink-0"/> HOLIDAY</div>
+           <div className="flex items-center gap-2 text-[10px] font-bold"><span className="w-3 h-3 bg-blue-600 rounded-sm shrink-0"/> VACATION</div>
+           <div className="flex items-center gap-2 text-[10px] font-bold"><span className="w-3 h-3 bg-green-600 rounded-sm shrink-0"/> ACTIVITY</div>
+           <div className="flex items-center gap-2 text-[10px] font-bold"><span className="w-3 h-3 bg-orange-500 rounded-sm shrink-0"/> EXAMINATION</div>
+           <div className="flex items-center gap-2 text-[10px] font-bold"><span className="w-3 h-3 bg-pink-500 rounded-sm shrink-0"/> EXAM-PREP</div>
+        </div>
+      </div>
+
+      {/* School Events */}
+      <div className="bg-green-50 p-4 sm:p-5 rounded-2xl border border-green-100">
+        <div className="flex items-center gap-2 mb-4">
+          <School className="text-green-700" size={18}/>
+          <h3 className="font-black text-green-900 uppercase text-xs sm:text-sm tracking-tighter">School Activities</h3>
+        </div>
+        <ul className="space-y-3">
+          {currentMonth.schoolProgrammes.map((p, i) => (
+            <li key={i} className="text-[10px] sm:text-xs font-bold text-green-800 flex items-start gap-2">
+              <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-1 shrink-0"/> {p}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {/* --- FOOTER MOTTO --- */}
+  <div className="bg-green-900 py-3 sm:py-4 px-6 text-center">
+    <p className="text-white text-[9px] sm:text-xs font-bold tracking-widest uppercase opacity-80">
+      " Good Environment, Best Education & Creative Knowledge "
+    </p>
+  </div>
+</div>
   );
 };
 
