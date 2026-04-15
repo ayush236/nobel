@@ -24,6 +24,7 @@ const PageBanner: FC<PageBannerProps> = ({ title, breadcrumbs, image }) => {
           src={image}
           alt=""
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
           aria-hidden="true"

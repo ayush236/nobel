@@ -1,9 +1,16 @@
+import type { Metadata } from 'next'
 import PageBanner from '@/components/PageBanner'
 import EventsCalendar from '@/components/EventsCalendar'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Academic Calendar 2083 | Nobel Environment Academy',
-  description: 'Upcoming events, examinations, and festivals for the academic year 2083 B.S.'
+  description: 'Upcoming events, examinations, and festivals for the academic year 2083 B.S. at Nobel Environment Academy, Kotihawa.',
+  keywords: ['academic calendar', 'school events', 'examination schedule', 'school festivals', 'academic year 2083'],
+  openGraph: {
+    title: 'Academic Calendar 2083 - Nobel Environment Academy',
+    description: 'View upcoming events, examinations, and festivals for the academic year.',
+    url: 'https://nobelenvironmentacademy.edu.np/calendar',
+  },
 }
 
 export default function CalendarPage() {

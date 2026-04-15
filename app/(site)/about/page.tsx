@@ -1,7 +1,19 @@
 import React, { FC } from 'react'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import PageBanner from '@/components/PageBanner'
 import Footer from '@/components/Footer'
+
+export const metadata: Metadata = {
+  title: 'About Us | Nobel Environment Academy',
+  description: 'Learn about Nobel Environment Academy - a private Montessori and secondary school established in 2068 B.S. in Kotihawa, Rupandehi. NEB affiliated with 215+ students.',
+  keywords: ['about Nobel Academy', 'school history', 'NEB affiliated', 'Kotihawa school', 'established 2068 BS'],
+  openGraph: {
+    title: 'About Nobel Environment Academy',
+    description: 'Private Montessori and secondary school in Kotihawa, Rupandehi offering quality education since 2068 B.S.',
+    url: 'https://nobelenvironmentacademy.edu.np/about',
+  },
+}
 
 interface KeyFact {
   label: string
