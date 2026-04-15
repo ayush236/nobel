@@ -49,11 +49,12 @@ const navItems: NavItem[] = [
     ]
   },
   {
-    label: 'NOTICE BOARD',
-    href: '/notice-board',
-    dropdown: [
-      { label: 'Academic Calendar', href: '/calendar' }
-    ]
+    label: 'ACADEMIC CALENDAR',
+    href: '/calendar',
+    // dropdown: [
+    //   { label: 'Academic Calendar', href: '/calendar' }
+    // ]
+    
   },
   { label: 'GALLERY', href: '/gallery' },
   { label: 'CONTACT', href: '/contact' }

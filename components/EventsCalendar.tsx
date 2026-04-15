@@ -155,7 +155,7 @@ const InteractiveCalendar: FC = () => {
       daysInMonth: 29,
       startingDayOfWeek: 2,
       specialDates: [
-        {},
+        {dayBS:18, eventText: "Udhauli Parva", type: "holiday"},
       ],
       schoolProgrammes: ["Project Work, Picnic", "Practical Activites, Education Tour","Internal Evaluation"],
     },
