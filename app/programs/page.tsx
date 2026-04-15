@@ -159,10 +159,24 @@ const ProgramsPage: FC = () => {
         </div>
       </section>
 
-      {/* CTA */}
-   
-
-      <Footer />
+      {/* CTA Section */}
+      <section className="py-16 px-6 bg-gradient-to-r from-green-700 to-green-800 text-white">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-4">Ready to Enroll?</h2>
+          <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
+            Get in touch with us to learn more about our programs and start your child's journey of academic excellence.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block px-10 py-4 bg-yellow-500 hover:bg-yellow-400 text-green-900 font-bold text-lg rounded-lg transition duration-300"
+          >
+            Contact Us Today
+          </Link>
+        </div>
+      </section>
+    </div>
+    {/* footer */}
+    <Footer />
     </div>
   )
 }
