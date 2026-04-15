@@ -6,6 +6,7 @@ import PageBanner from '@/components/PageBanner'
 import { programs } from '@/lib/data'
 import Topbar from '@/components/Topbar'
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Academic Programs | Nobel Environment Academy',
@@ -130,6 +131,8 @@ const ProgramsPage: FC = () => {
         </div>
       </section>
     </div>
+    {/* footer */}
+    <Footer />
     </div>
   )
 }
