@@ -16,6 +16,7 @@ interface MonthData {
   yearBS: number;
   daysInMonth: number;
   startingDayOfWeek: number; // 0: Sun, 1: Mon, etc.
+  startAD: Date
   specialDates: CalendarEvent[];
   schoolProgrammes: string[];
 }
@@ -36,6 +37,7 @@ const InteractiveCalendar: FC = () => {
       yearBS: 2083,
       daysInMonth: 31,
       startingDayOfWeek: 2,
+      startAD: new Date(2026, 4, 14),
       specialDates: [
         { dayBS: 1, eventText: "New Year", type: "holiday" },
         { dayBS: 18, eventText: "Gautam Buddha Jayanti", type: "holiday" },
@@ -48,6 +50,8 @@ const InteractiveCalendar: FC = () => {
       yearBS: 2083,
       daysInMonth: 31,
       startingDayOfWeek: 5,
+      startAD: new Date(2026, 5, 14),
+
       specialDates: [
         { dayBS: 15, eventText: "Republic Day", type: "holiday" },
       ],
@@ -59,6 +63,8 @@ const InteractiveCalendar: FC = () => {
       yearBS: 2083,
       daysInMonth: 32,
       startingDayOfWeek: 1,
+            startAD: new Date(2026, 6, 15),
+
       specialDates: [
         { dayBS: 22, eventText: "1st Term Exam", type: "exam-preparation" },
         { dayBS: 23, eventText: "1st Term Exam", type: "exam" },
@@ -78,6 +84,8 @@ const InteractiveCalendar: FC = () => {
       yearBS: 2083,
       daysInMonth: 31,
       startingDayOfWeek: 5,
+            startAD: new Date(2026, 7, 17),
+
       specialDates: [
         { dayBS: 8, eventText: "Result Day", type: "exam" },
       ],
@@ -89,6 +97,8 @@ const InteractiveCalendar: FC = () => {
       yearBS: 2083,
       daysInMonth: 31,
       startingDayOfWeek: 1,
+            startAD: new Date(2026, 8, 17),
+
       specialDates: [
         { dayBS: 12, eventText: "Janai Purnima", type: "holiday" },
         { dayBS: 19, eventText: "Krishna Janmashtami", type: "holiday" },
@@ -103,6 +113,8 @@ const InteractiveCalendar: FC = () => {
       yearBS: 2083,
       daysInMonth: 30,
       startingDayOfWeek: 4,
+            startAD: new Date(2026, 9, 17),
+
       specialDates: [
         { dayBS: 20, eventText: "Exam-Preparation", type: "exam-preparation" },
         { dayBS: 21, eventText: "Half-yearly Exam", type: "exam" },
@@ -128,6 +140,8 @@ const InteractiveCalendar: FC = () => {
       yearBS: 2083,
       daysInMonth: 30,
       startingDayOfWeek: 0,
+            startAD: new Date(2026, 10, 18),
+
       specialDates: [
         { dayBS: 1, eventText: " ", type: "holiday" },
         { dayBS: 2, eventText: " ", type: "holiday" },
@@ -152,8 +166,10 @@ const InteractiveCalendar: FC = () => {
       monthNameNe: "मंसिर",
       monthNameEn: "NOV/DEC 2026",
       yearBS: 2083,
-      daysInMonth: 29,
+      daysInMonth: 30,
       startingDayOfWeek: 2,
+            startAD: new Date(2026, 11, 17),
+
       specialDates: [
         {dayBS:18, eventText: "Udhauli Parva", type: "holiday"},
       ],
@@ -165,6 +181,8 @@ const InteractiveCalendar: FC = () => {
       yearBS: 2083,
       daysInMonth: 30,
       startingDayOfWeek: 3,
+            startAD: new Date(2026, 12, 16),
+
       specialDates: [
         { dayBS: 9, eventText: "ubhauli parva", type: "holiday" },
         { dayBS: 10, eventText: "Christmas Day", type: "holiday" },
@@ -187,8 +205,10 @@ const InteractiveCalendar: FC = () => {
       monthNameNe: "माघ",
       monthNameEn: "JAN/FEB 2027",
       yearBS: 2083,
-      daysInMonth: 29,
+      daysInMonth: 30,
       startingDayOfWeek: 5,
+            startAD: new Date(2027, 1, 15),
+
       specialDates: [
         { dayBS: 1, eventText: "Makar Sankranti", type: "holiday" },
         { dayBS: 8, eventText: "Result Day", type: "exam" },
@@ -204,6 +224,8 @@ const InteractiveCalendar: FC = () => {
       yearBS: 2083,
       daysInMonth: 30,
       startingDayOfWeek: 6,
+            startAD: new Date(2027, 2, 13),
+
       specialDates: [
         { dayBS: 7, eventText: "Prajatantra Diwas", type: "holiday" },
         { dayBS: 15, eventText: "International Women's Day", type: "holiday" },
@@ -218,6 +240,8 @@ const InteractiveCalendar: FC = () => {
       yearBS: 2083,
       daysInMonth: 30,
       startingDayOfWeek: 1,
+            startAD: new Date(2027, 3, 15),
+
       specialDates: [
         { dayBS: 8, eventText: "Fagu Poornima(terai)", type: "holiday" },
         { dayBS: 11, eventText: "Final Exam", type: "exam" },
@@ -277,15 +301,22 @@ const InteractiveCalendar: FC = () => {
             {day}
           </div>
         ))}
-
+           {}
         {Array(currentMonth.startingDayOfWeek).fill(null).map((_, i) => (
           <div key={`blank-${i}`} className="aspect-square bg-gray-50/50 rounded-lg" />
         ))}
 
-        {Array.from({ length: currentMonth.daysInMonth }).map((_, i) => {
-          const dayNum = i + 1;
-          const special = currentMonth.specialDates.find(d => d.dayBS === dayNum);
-          const isSaturday = (dayNum + currentMonth.startingDayOfWeek) % 7 === 0;
+        {/* Actual Days */}
+            {Array.from({ length: currentMonth.daysInMonth }).map((_, i) => {
+  const dayNum = i + 1;
+  
+  // CALCULATE AD DATE DYNAMICALLY
+  const adDate = new Date(currentMonth.startAD);
+  adDate.setDate(adDate.getDate() + i);
+  const adDay = adDate.getDate();
+
+  const special = currentMonth.specialDates.find((d) => d.dayBS === dayNum);
+  const isSaturday = (dayNum + currentMonth.startingDayOfWeek) % 7 === 0;
           
           return (
             <div 
@@ -303,7 +334,7 @@ const InteractiveCalendar: FC = () => {
               {/* English Date */}
               <div className="w-full flex justify-end">
                 <span className={`text-[8px] sm:text-[10px] font-bold ${!special && !isSaturday ? "text-gray-400" : "text-white/70"}`}>
-                  {dayNum + 13}
+                  {adDay}
                 </span>
               </div>
 
