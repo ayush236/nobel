@@ -1,0 +1,9 @@
+name = "nobel-school"
+pages_build_output_dir = ".next"
+
+[compatibility_flags]
+nodejs_compat = true
+
+[vars]
+# These can be set in the dashboard, but listed here for clarity
+# ADMIN_SESSION_SECRET = "..."
