@@ -1,6 +1,9 @@
 import { Users, BookOpen, Bell, Image } from 'lucide-react'
 import { notices, programs, galleryImages } from '@/lib/data'
 
+export const runtime = 'edge'
+export const dynamic = 'force-dynamic'
+
 
 const stats = [
   { label: 'Total Programs',  value: programs.length,      icon: BookOpen, color: 'bg-blue-50 text-blue-600' },

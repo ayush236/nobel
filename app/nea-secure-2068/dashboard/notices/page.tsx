@@ -1,5 +1,8 @@
 import { notices } from '@/lib/data'
 
+export const runtime = 'edge'
+export const dynamic = 'force-dynamic'
+
 
 export default function AdminNotices() {
   return (
