@@ -1,8 +1,8 @@
 name = "nobel-school"
 pages_build_output_dir = ".next"
+compatibility_date = "2024-11-18"
 
-[compatibility_flags]
-nodejs_compat = true
+compatibility_flags = [ "nodejs_compat" ]
 
 [vars]
 # These can be set in the dashboard, but listed here for clarity
