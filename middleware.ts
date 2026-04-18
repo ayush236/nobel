@@ -1,6 +1,6 @@
+export const runtime = 'edge'
 import { NextRequest, NextResponse } from 'next/server'
 
-export const runtime = 'experimental-edge'
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
