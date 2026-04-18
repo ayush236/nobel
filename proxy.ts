@@ -1,8 +1,6 @@
-export const runtime = 'experimental-edge'
 import { NextRequest, NextResponse } from 'next/server'
 
-
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // Allow login page through always
