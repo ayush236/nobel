@@ -1,9 +1,10 @@
 name = "nobel-school"
-pages_build_output_dir = ".next"
+main = ".vercel/output/static/_worker.js/index.js"
 compatibility_date = "2024-11-18"
-
 compatibility_flags = [ "nodejs_compat" ]
 
+[assets]
+directory = ".vercel/output/static"
+
 [vars]
-# These can be set in the dashboard, but listed here for clarity
-# ADMIN_SESSION_SECRET = "..."
+# Add your environment variables here or in the Cloudflare dashboard
