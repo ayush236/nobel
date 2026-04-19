@@ -11,7 +11,9 @@ import PageBanner from '@/components/PageBanner'
 import Footer from '@/components/Footer'
 import { facilities } from '@/lib/data'
 
+
 interface PageProps {
+
   params: Promise<{ slug: string }>
 }
 
