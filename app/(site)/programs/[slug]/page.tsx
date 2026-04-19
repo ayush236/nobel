@@ -7,7 +7,9 @@ import PageBanner from '@/components/PageBanner'
 import { programs } from '@/lib/data'
 import type { Program } from '@/types'
 
+
 interface PageProps {
+
   params: Promise<{ slug: string }>
 }
 
