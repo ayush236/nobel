@@ -2,11 +2,9 @@ import { getGalleryImages } from '@/app/actions/uploadImage'
 import UploadForm from './UploadForm'
 import GalleryGrid from './GalleryGrid'
 
-export const runtime = 'edge'
-export const dynamic = 'force-dynamic'
-
 
 export default async function AdminGallery() {
+
   const images = await getGalleryImages()
 
   return (
